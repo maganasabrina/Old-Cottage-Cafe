@@ -4,346 +4,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Wild Thistle | Coffee & Bakery</title>
+<title>The Old Cottage Cafe | Bakery & Cafe</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --green: #263c2c;
-  --moss: #56664c;
-  --cream: #dfd0b5;
-  --paper: #cbbb9e;
-  --wood: #302219;
-  --black: #151512;
-  --rust: #76513a;
+ --black:#171612;
+ --wood:#302219;
+ --green:#243b2b;
+ --moss:#53634a;
+ --cream:#dfd0b5;
+ --paper:#cbbb9e;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* {box-sizing:border-box;margin:0;padding:0;}
 
-html { scroll-behavior: smooth; }
+html {scroll-behavior:smooth;}
 
 body {
-  background: var(--black);
-  color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
+ background:var(--black);
+ color:var(--cream);
+ font-family:'Cormorant Garamond',serif;
 }
 
-a { color: inherit; text-decoration: none; }
-
-/* NAVIGATION */
+a {color:inherit;text-decoration:none;}
 
 nav {
-  position: relative;
-  z-index: 2;
-  background:
-    repeating-linear-gradient(4deg,
-    #201811 0px, #302319 3px,
-    #211912 6px, #38281c 9px);
-  border-bottom: 2px solid #70553b;
-  padding: 23px 6%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 15px;
+ min-height:105px;
+ display:flex;
+ align-items:center;
+ justify-content:space-around;
+ flex-wrap:wrap;
+ gap:15px;
+ padding:20px;
+ background:
+ repeating-linear-gradient(3deg,#17120e,#34241a 4px,#211710 8px);
+ border-bottom:4px solid #655039;
 }
 
 .logo {
-  font-family: 'Special Elite', cursive;
-  font-size: 23px;
-  letter-spacing: 2px;
-}
-
-nav .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+ font-family:'Special Elite',cursive;
+ font-size:25px;
+ letter-spacing:2px;
 }
 
 nav a {
-  font-family: 'Special Elite', cursive;
-  font-size: 13px;
-  transition: .3s;
+ font-family:'Special Elite',cursive;
+ font-size:13px;
+ margin:10px;
 }
 
-nav a:hover { color: #a7b18b; }
-
-/* HERO */
+nav a:hover {color:#a4b28c;}
 
 .hero {
-  min-height: 620px;
-  display: flex;
-  align-items: center;
-  padding: 7%;
-  background:
-    linear-gradient(90deg,
-    rgba(12,15,11,.92),
-    rgba(12,15,11,.2)),
-    url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1800')
-    center/cover;
-  border-bottom: 9px solid #34251b;
+ min-height:410px;
+ display:flex;
+ align-items:center;
+ padding:7%;
+ position:relative;
+ background:
+ linear-gradient(90deg,rgba(10,13,9,.88),rgba(10,13,9,.12)),
+ url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1800')
+ center/cover;
+ border-bottom:10px solid #39291e;
 }
 
-.hero-content { max-width: 700px; }
+.hero-content {max-width:650px;}
 
 .hero h1 {
-  font-family: 'Special Elite', cursive;
-  font-size: clamp(48px, 9vw, 95px);
-  line-height: 1;
-  margin-bottom: 22px;
-  text-shadow: 3px 3px #171715;
+ font-family:'Special Elite',cursive;
+ font-size:clamp(50px,8vw,95px);
+ line-height:1;
+ text-shadow:3px 4px #171612;
+ margin-bottom:20px;
 }
 
 .hero p {
-  font-size: 21px;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
+ font-size:19px;
+ letter-spacing:3px;
+ margin-bottom:25px;
 }
 
-.script {
-  font-family: 'Caveat', cursive;
-  font-size: 34px;
-  color: #c5b38e;
+.handwriting {
+ font-family:'Caveat',cursive;
+ font-size:30px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 14px 30px;
-  border: 1px solid var(--cream);
-  font-family: 'Special Elite', cursive;
-  font-size: 14px;
-  transition: .3s;
+.button {
+ display:inline-block;
+ padding:13px 28px;
+ border:1px solid var(--cream);
+ font-family:'Special Elite',cursive;
+ letter-spacing:2px;
+ transition:.3s;
 }
 
-.btn:hover {
-  background: var(--cream);
-  color: var(--black);
+.button:hover {
+ background:var(--cream);
+ color:var(--black);
 }
 
-/* SECTION STYLES */
+/* THE THREE-PANEL SCRAPBOOK */
 
-section { padding: 80px 8%; }
-
-.section-title {
-  font-family: 'Special Elite', cursive;
-  font-size: clamp(30px, 5vw, 46px);
-  margin-bottom: 15px;
+.scrapbook {
+ display:grid;
+ grid-template-columns:1fr 1fr 1fr;
+ gap:0;
+ padding:22px 2%;
+ background:
+ repeating-linear-gradient(3deg,#211811,#38271c 5px,#211811 10px);
+ border-bottom:7px solid #655039;
 }
 
-.section-intro {
-  font-size: 21px;
-  margin-bottom: 35px;
+.paper-panel {
+ background:
+ repeating-linear-gradient(2deg,#d8c8a9,#d8c8a9 3px,#cbbb9e 5px);
+ color:#211c16;
+ padding:25px;
+ margin:10px;
+ transform:rotate(-1deg);
+ box-shadow:3px 5px 12px #0b0907;
 }
 
-/* OUR STORY */
-
-.story {
-  background:
-    repeating-linear-gradient(2deg,
-    #d5c5a7, #d5c5a7 3px,
-    #cbbb9e 5px);
-  color: #211c16;
-  text-align: center;
+.paper-panel img {
+ width:100%;
+ height:220px;
+ object-fit:cover;
+ filter:sepia(25%);
+ border:7px solid #e7dac1;
 }
 
-.story p {
-  max-width: 730px;
-  margin: auto;
-  font-size: 23px;
-  line-height: 1.7;
+.paper-panel h2 {
+ font-family:'Special Elite',cursive;
+ font-size:29px;
+ margin:15px 0;
 }
 
-.story .script {
-  color: #45543c;
-  margin-top: 20px;
+.paper-panel p {
+ font-size:19px;
+ line-height:1.5;
 }
 
-/* MENU */
-
-.menu {
-  background:
-    linear-gradient(rgba(31,51,36,.96), rgba(31,51,36,.96)),
-    url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1200')
-    center/cover;
-  text-align: center;
+.paper-panel .handwriting {
+ color:#46543b;
+ margin-top:15px;
 }
 
-.menu-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin: 30px 0;
+.menu-panel {
+ background:
+ repeating-linear-gradient(4deg,#243b2b,#2c432e 4px,#1c3022 8px);
+ border:5px solid #493b2b;
+ padding:28px 18px;
+ text-align:center;
+ margin:10px;
+ box-shadow:4px 5px 12px #0b0907;
 }
 
-.menu-tabs button {
-  background: transparent;
-  border: 1px solid var(--cream);
-  color: var(--cream);
-  padding: 12px 19px;
-  cursor: pointer;
-  font-family: 'Special Elite', cursive;
+.menu-panel h2 {
+ font-family:'Special Elite',cursive;
+ font-size:34px;
+ margin:12px 0;
 }
 
-.menu-tabs button.active,
-.menu-tabs button:hover {
-  background: var(--cream);
-  color: var(--black);
+.menu-panel .menu-category {
+ padding:13px 0;
+ border-bottom:1px dashed #9b9c78;
+ font-family:'Special Elite',cursive;
+ font-size:16px;
+ letter-spacing:1px;
 }
 
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  text-align: left;
+.menu-panel .handwriting {
+ margin-top:20px;
 }
 
-.menu-item {
-  padding: 25px;
-  background: rgba(12,17,12,.55);
-  border: 1px solid #79816b;
-  transition: .3s;
+/* FEATURED PHOTOGRAPH */
+
+.photo-panel {
+ padding:20px;
+ margin:10px;
+ background:#d9c9ab;
+ color:#211c16;
+ box-shadow:4px 5px 13px #080705;
+ transform:rotate(2deg);
+ align-self:center;
 }
 
-.menu-item:hover {
-  transform: translateY(-5px);
-  background: rgba(12,17,12,.8);
+.photo-panel img {
+ width:100%;
+ height:300px;
+ object-fit:cover;
+ filter:sepia(15%) contrast(1.05);
 }
 
-.menu-item h3 {
-  font-family: 'Special Elite', cursive;
-  font-size: 21px;
-  margin-bottom: 9px;
+.photo-panel p {
+ font-family:'Caveat',cursive;
+ font-size:27px;
+ text-align:center;
+ padding:12px 0 4px;
 }
 
-.menu-item p {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #d3c6aa;
+/* BOTTOM VALUES */
+
+.values {
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:15px;
+ padding:45px 5%;
+ text-align:center;
+ background:
+ repeating-linear-gradient(3deg,#17120e,#302219 5px,#211710 10px);
+ border-bottom:5px solid #675039;
 }
 
-.price {
-  display: block;
-  color: #b9c39f;
-  font-size: 20px;
-  margin-top: 12px;
+.value-item {
+ padding:10px;
 }
 
-.menu-note {
-  margin-top: 35px;
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
+.value-item .symbol {
+ font-size:35px;
+ margin-bottom:10px;
 }
 
-/* FEATURED BAKERY */
-
-.bakery {
-  background: var(--wood);
-  text-align: center;
-}
-
-.bakery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
-  margin-top: 35px;
-}
-
-.bakery-card {
-  background: #dfd0b5;
-  color: #211c16;
-  padding: 12px 12px 22px;
-  transform: rotate(-1deg);
-  box-shadow: 4px 7px 12px #100d0a;
-}
-
-.bakery-card:nth-child(even) { transform: rotate(1deg); }
-
-.bakery-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  filter: sepia(15%) saturate(.8);
-}
-
-.bakery-card h3 {
-  font-family: 'Special Elite', cursive;
-  font-size: 21px;
-  margin: 15px 0 6px;
-}
-
-.bakery-card p { font-size: 18px; }
-
-/* GALLERY */
-
-.gallery {
-  background: var(--black);
-  text-align: center;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  margin-top: 35px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 290px;
-  object-fit: cover;
-  padding: 10px 10px 28px;
-  background: var(--paper);
-  filter: sepia(20%);
-  box-shadow: 3px 5px 15px #000;
-  transition: .3s;
-}
-
-.gallery-grid img:hover { transform: rotate(-2deg) scale(1.03); }
-
-/* VISIT */
-
-.visit {
-  text-align: center;
-  background: var(--green);
-  border-top: 2px solid #82704e;
-}
-
-.visit p {
-  font-size: 21px;
-  line-height: 1.8;
+.value-item h3 {
+ font-family:'Special Elite',cursive;
+ font-size:15px;
+ line-height:1.5;
 }
 
 footer {
-  padding: 55px 20px;
-  text-align: center;
-  background:
-    repeating-linear-gradient(3deg,
-    #1d1711, #302219 4px, #1b1510 8px);
-  border-top: 5px solid #655039;
+ text-align:center;
+ padding:40px 20px;
+ background:var(--black);
 }
 
 footer h2 {
-  font-family: 'Special Elite', cursive;
-  font-size: 30px;
+ font-family:'Special Elite',cursive;
+ font-size:28px;
 }
 
-footer p { margin-top: 15px; }
+footer p {margin:12px;}
 
-footer .script { margin-top: 15px; }
-
-/* MOBILE */
-
-@media(max-width:650px) {
-  nav { justify-content: center; }
-  nav .links { justify-content: center; gap: 13px; }
-  .hero { min-height: 480px; }
-  section { padding: 60px 7%; }
+@media(max-width:750px) {
+ .scrapbook {grid-template-columns:1fr;}
+ .hero {min-height:380px;}
+ .values {grid-template-columns:repeat(2,1fr);}
+ nav {justify-content:center;}
+ nav a {margin:5px;}
 }
 </style>
 </head>
@@ -351,153 +259,98 @@ footer .script { margin-top: 15px; }
 <body>
 
 <nav>
-  <div class="logo">✦ THE WILD THISTLE ✦</div>
-  <div class="links">
-    <a href="#home">HOME</a>
-    <a href="#story">OUR STORY</a>
-    <a href="#menu">COFFEE</a>
-    <a href="#bakery">BAKERY</a>
-    <a href="#visit">FIND US</a>
-  </div>
+ <div class="logo">✦ THE WILD THISTLE ✦</div>
+ <div>
+  <a href="#home">HOME</a>
+  <a href="#story">OUR STORY</a>
+  <a href="#menu">MENU</a>
+  <a href="#bakery">BAKERY</a>
+  <a href="#visit">VISIT US</a>
+ </div>
 </nav>
 
 <header class="hero" id="home">
-  <div class="hero-content">
-    <div class="script">A little wild. A little wonderful.</div>
-    <h1>THE WILD<br>THISTLE</h1>
-    <p>COFFEE • BAKED GOODS • GOOD SOULS</p>
-    <a href="#menu" class="btn">EXPLORE THE MENU</a>
-  </div>
+ <div class="hero-content">
+  <div class="handwriting">Freshly baked & a little wild ♡</div>
+  <h1>OLD COTTAGE<br>CAFE</h1>
+  <p>COFFEE ✦ BAKED GOODS ✦ GOOD COMPANY</p>
+  <a href="#menu" class="button">EXPLORE OUR MENU</a>
+ </div>
 </header>
 
-<section class="story" id="story">
-  <h2 class="section-title">A PLACE TO STAY AWHILE</h2>
+<div class="scrapbook" id="story">
+
+ <div class="paper-panel">
+  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700" alt="Rustic artisan bread">
+  <h2>A LITTLE ABOUT US</h2>
   <p>
-    Somewhere between the wildflowers and the old wooden
-    floors, there's a little place where coffee is strong,
-    pastries are made with love, and everyone belongs.
-    Come as you are. Stay for another cup.
+   A cozy little corner for slow mornings,
+   freshly baked bread, warm coffee and
+   people who appreciate the simple things.
+   Made with love, served with soul.
   </p>
-  <div class="script">Good coffee. Wild hearts. ♡</div>
-</section>
+  <div class="handwriting">Good things take time. ♡</div>
+ </div>
 
-<section class="menu" id="menu">
-  <h2 class="section-title">THE DRINK MENU</h2>
-  <p class="section-intro">Something warm for your wandering soul.</p>
+ <div class="menu-panel" id="menu">
+  <div class="handwriting">Made fresh. Poured with love.</div>
+  <h2>THE MENU</h2>
 
-  <div class="menu-tabs">
-    <button class="active" onclick="showMenu('coffee',this)">COFFEE</button>
-    <button onclick="showMenu('specialty',this)">SPECIALTY</button>
-    <button onclick="showMenu('tea',this)">TEA & MORE</button>
-  </div>
+  <div class="menu-category">✦ ESPRESSO & COFFEE</div>
+  <div class="menu-category">✦ SIGNATURE LATTES</div>
+  <div class="menu-category">✦ ICED BEVERAGES</div>
+  <div class="menu-category">✦ TEA & SPECIALTY DRINKS</div>
+  <div class="menu-category">✦ FRESH BAKED GOODS</div>
+  <div class="menu-category">✦ SEASONAL FAVORITES</div>
 
-  <div class="menu-grid" id="menu-items"></div>
-  <div class="menu-note">Made slowly. Served with love. ♡</div>
-</section>
+  <br>
+  <a href="#full-menu" class="button">VIEW FULL MENU</a>
+ </div>
 
-<section class="bakery" id="bakery">
-  <h2 class="section-title">FRESH FROM THE OVEN</h2>
-  <p class="section-intro">A little sweetness for the wild ones.</p>
+ <div class="photo-panel" id="bakery">
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700" alt="Coffee and cafe treats">
+  <p>Fresh coffee, warm hearts ♡</p>
+ </div>
 
-  <div class="bakery-grid">
-    <div class="bakery-card">
-      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Fresh artisan bread">
-      <h3>ARTISAN BREAD</h3>
-      <p>Rustic, crusty and made with love.</p>
-    </div>
+</div>
 
-    <div class="bakery-card">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600" alt="Coffee and pastry">
-      <h3>THE MORNING RITUAL</h3>
-      <p>Fresh coffee and something sweet.</p>
-    </div>
+<section class="scrapbook" id="full-menu">
 
-    <div class="bakery-card">
-      <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600" alt="Fresh bakery pastries">
-      <h3>FRESH PASTRIES</h3>
-      <p>Flaky, buttery little pieces of heaven.</p>
-    </div>
-  </div>
-</section>
-
-<section class="gallery">
-  <h2 class="section-title">LIFE AT THE THISTLE</h2>
-  <p class="section-intro">Coffee dates, slow mornings and little moments.</p>
-
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600" alt="Cozy coffee shop">
-    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600" alt="Coffee being prepared">
-    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Coffee and cafe atmosphere">
-  </div>
-</section>
-
-<section class="visit" id="visit">
-  <h2 class="section-title">COME FIND YOUR LITTLE WILD</h2>
+ <div class="paper-panel">
+  <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700" alt="Fresh pastries">
+  <h2>FROM OUR OVEN</h2>
   <p>
-    Stop in for your favorite cup.<br>
-    Stay for the atmosphere.<br>
-    Leave a little happier.
+   Buttery croissants, cinnamon rolls,
+   homemade cookies, artisan breads
+   and little sweet things made fresh.
   </p>
+  <div class="handwriting">A little sweetness for your soul.</div>
+ </div>
+
+ <div class="menu-panel">
+  <div class="handwriting">Your new favorite ritual</div>
+  <h2>DRINK SOMETHING GOOD</h2>
+  <div class="menu-category">THE WILDFLOWER LATTE</div>
+  <div class="menu-category">THE DARK HORSE MOCHA</div>
+  <div class="menu-category">HONEY OAK LATTE</div>
+  <div class="menu-category">VANILLA COLD BREW</div>
+  <div class="menu-category">SEASONAL SPECIALTIES</div>
   <br>
-  <p>LOCATION: YOUR TOWN, YOUR STATE</p>
-  <p>HOURS: ADD YOUR BUSINESS HOURS</p>
-  <br>
-  <a class="btn" href="mailto:hello@example.com">GET IN TOUCH</a>
+  <a href="#visit" class="button">COME SAY HELLO</a>
+ </div>
+
+ <div class="photo-panel">
+  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700" alt="Freshly baked bread">
+  <p>Something good is baking ♡</p>
+ </div>
+
 </section>
 
-<footer>
-  <h2>THE WILD THISTLE</h2>
-  <p>COFFEE • BAKERY • COMMUNITY</p>
-  <div class="script">Stay wild, darling. ♡</div>
-  <p>© 2026 THE WILD THISTLE</p>
-</footer>
-
-<script>
-const menus = {
-  coffee: [
-    ["Wildflower Latte","Espresso, vanilla and creamy steamed milk.","$5.50"],
-    ["Dark Horse Mocha","Rich chocolate and espresso.","$5.75"],
-    ["Classic Americano","Bold espresso and hot water.","$4.00"],
-    ["Honey Oak Latte","Espresso, honey and warm cinnamon.","$5.75"],
-    ["Vanilla Cold Brew","Slow-steeped coffee and vanilla cream.","$5.50"],
-    ["Maple Brown Sugar Latte","Maple, brown sugar and espresso.","$6.00"]
-  ],
-  specialty: [
-    ["The Thistle","Our signature house specialty latte.","$6.00"],
-    ["Midnight Mocha","Dark chocolate, espresso and whipped cream.","$6.00"],
-    ["Cowgirl Caramel","Caramel, espresso and sea salt.","$5.75"],
-    ["Lavender Dreams","Lavender, vanilla and steamed milk.","$5.75"],
-    ["Dirty Chai","Spiced chai with a shot of espresso.","$6.00"],
-    ["Seasonal Wildcard","A rotating seasonal creation.","Market price"]
-  ],
-  tea: [
-    ["Wild Berry Tea","Fruity herbal tea.","$4.00"],
-    ["London Fog","Earl Grey, vanilla and steamed milk.","$5.00"],
-    ["Golden Chai","Warming spices and creamy milk.","$5.00"],
-    ["Matcha Latte","Earthy matcha and steamed milk.","$5.75"],
-    ["Iced Herbal Tea","Refreshing rotating herbal blend.","$4.00"],
-    ["Hot Chocolate","Rich chocolate and whipped cream.","$4.75"]
-  ]
-};
-
-function showMenu(category, button) {
-  document.querySelectorAll('.menu-tabs button')
-    .forEach(b => b.classList.remove('active'));
-
-  button.classList.add('active');
-
-  document.getElementById('menu-items').innerHTML =
-    menus[category].map(item => `
-      <article class="menu-item">
-        <h3>${item[0]}</h3>
-        <p>${item[1]}</p>
-        <span class="price">${item[2]}</span>
-      </article>
-    `).join('');
-}
-
-showMenu('coffee', document.querySelector('.menu-tabs button'));
-</script>
-
-</body>
-</html>
+<div class="values">
+ <div class="value-item">
+  <div class="symbol">☕</div>
+  <h3>GOOD COFFEE<br>GOOD DAYS</h3>
+ </div>
+ <div class="value-item">
+  <div class="symbol">✿</div>
+  <h3>MA
