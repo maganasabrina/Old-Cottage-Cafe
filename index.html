@@ -3,100 +3,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Old Cottage Cafe | Bakery & Cafe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Old Cottage Cafe</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
- --black:#171612;
- --wood:#302219;
- --green:#243b2b;
- --moss:#53634a;
- --cream:#dfd0b5;
- --paper:#cbbb9e;
+  --black:#171612;
+  --wood:#302219;
+  --green:#263c2c;
+  --moss:#53634a;
+  --cream:#dfd0b5;
+  --paper:#d4c3a3;
 }
 
-* {box-sizing:border-box;margin:0;padding:0;}
-
-html {scroll-behavior:smooth;}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
 
 body {
- background:var(--black);
- color:var(--cream);
- font-family:'Cormorant Garamond',serif;
+  background:var(--black);
+  color:var(--cream);
+  font-family:'Cormorant Garamond',serif;
 }
 
-a {color:inherit;text-decoration:none;}
+a {color:inherit;text-decoration:none}
+
+/* DISTRESSED WOOD */
+
+.wood {
+ background:
+ linear-gradient(90deg,rgba(0,0,0,.3),transparent,rgba(0,0,0,.4)),
+ repeating-linear-gradient(3deg,
+ #19140f 0px,#35271c 4px,
+ #211811 7px,#302117 10px);
+ border-bottom:2px solid #665039;
+}
+
+/* NAVIGATION */
 
 nav {
- min-height:105px;
+ min-height:115px;
  display:flex;
  align-items:center;
  justify-content:space-around;
  flex-wrap:wrap;
  gap:15px;
- padding:20px;
- background:
- repeating-linear-gradient(3deg,#17120e,#34241a 4px,#211710 8px);
- border-bottom:4px solid #655039;
+ padding:18px;
 }
 
 .logo {
  font-family:'Special Elite',cursive;
- font-size:25px;
+ font-size:23px;
  letter-spacing:2px;
 }
 
 nav a {
  font-family:'Special Elite',cursive;
  font-size:13px;
- margin:10px;
+ margin:0 12px;
 }
 
-nav a:hover {color:#a4b28c;}
+nav a:hover {color:#a9b58d}
+
+/* HERO */
 
 .hero {
  min-height:410px;
  display:flex;
  align-items:center;
- padding:7%;
- position:relative;
+ padding:6% 10%;
  background:
- linear-gradient(90deg,rgba(10,13,9,.88),rgba(10,13,9,.12)),
+ linear-gradient(90deg,rgba(12,14,10,.88),rgba(12,14,10,.15)),
  url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1800')
  center/cover;
  border-bottom:10px solid #39291e;
 }
 
-.hero-content {max-width:650px;}
-
 .hero h1 {
  font-family:'Special Elite',cursive;
- font-size:clamp(50px,8vw,95px);
+ font-size:clamp(45px,8vw,90px);
  line-height:1;
+ margin:20px 0;
  text-shadow:3px 4px #171612;
- margin-bottom:20px;
 }
 
 .hero p {
- font-size:19px;
+ font-family:'Special Elite',cursive;
  letter-spacing:3px;
- margin-bottom:25px;
+ font-size:15px;
 }
 
-.handwriting {
+.script {
  font-family:'Caveat',cursive;
  font-size:30px;
 }
 
 .button {
  display:inline-block;
- padding:13px 28px;
+ padding:13px 26px;
  border:1px solid var(--cream);
  font-family:'Special Elite',cursive;
- letter-spacing:2px;
+ font-size:13px;
+ margin-top:25px;
  transition:.3s;
 }
 
@@ -105,252 +114,409 @@ nav a:hover {color:#a4b28c;}
  color:var(--black);
 }
 
-/* THE THREE-PANEL SCRAPBOOK */
+/* SCRAPBOOK LAYOUT */
 
 .scrapbook {
  display:grid;
  grid-template-columns:1fr 1fr 1fr;
- gap:0;
- padding:22px 2%;
+ gap:12px;
+ padding:20px 2%;
  background:
- repeating-linear-gradient(3deg,#211811,#38271c 5px,#211811 10px);
- border-bottom:7px solid #655039;
+ repeating-linear-gradient(3deg,#201710,#342319 5px,#211710 9px);
+ border-bottom:8px solid #493622;
 }
 
-.paper-panel {
+.paper {
  background:
- repeating-linear-gradient(2deg,#d8c8a9,#d8c8a9 3px,#cbbb9e 5px);
- color:#211c16;
- padding:25px;
- margin:10px;
+ repeating-linear-gradient(2deg,#d9c9ab,#d9c9ab 3px,#cbbb9d 5px);
+ color:#211c15;
+ padding:20px;
+ margin:8px;
  transform:rotate(-1deg);
- box-shadow:3px 5px 12px #0b0907;
+ box-shadow:4px 5px 13px #080705;
+ position:relative;
 }
 
-.paper-panel img {
+.paper img {
  width:100%;
- height:220px;
+ height:205px;
  object-fit:cover;
- filter:sepia(25%);
- border:7px solid #e7dac1;
+ border:7px solid #e9ddc5;
+ filter:sepia(20%);
 }
 
-.paper-panel h2 {
+.paper h2 {
  font-family:'Special Elite',cursive;
- font-size:29px;
+ font-size:28px;
  margin:15px 0;
 }
 
-.paper-panel p {
+.paper p {
  font-size:19px;
- line-height:1.5;
+ line-height:1.55;
 }
 
-.paper-panel .handwriting {
- color:#46543b;
- margin-top:15px;
-}
+.paper .script {color:#45523b;margin-top:15px}
 
-.menu-panel {
+/* GREEN MENU BOARD */
+
+.board {
  background:
- repeating-linear-gradient(4deg,#243b2b,#2c432e 4px,#1c3022 8px);
- border:5px solid #493b2b;
- padding:28px 18px;
+ repeating-linear-gradient(4deg,#243b2b,#304832 5px,#203323 9px);
+ border:7px solid #493a29;
+ margin:8px;
+ padding:25px 18px;
  text-align:center;
- margin:10px;
- box-shadow:4px 5px 12px #0b0907;
+ box-shadow:4px 5px 13px #080705;
 }
 
-.menu-panel h2 {
+.board h2 {
  font-family:'Special Elite',cursive;
  font-size:34px;
- margin:12px 0;
+ margin:15px 0;
 }
 
-.menu-panel .menu-category {
- padding:13px 0;
- border-bottom:1px dashed #9b9c78;
+.board .script {color:#d5c5a6}
+
+.menu-line {
+ display:flex;
+ justify-content:space-between;
+ gap:10px;
+ border-bottom:1px dashed #909878;
+ padding:12px 0;
  font-family:'Special Elite',cursive;
- font-size:16px;
- letter-spacing:1px;
+ font-size:15px;
 }
 
-.menu-panel .handwriting {
- margin-top:20px;
+.menu-line strong {white-space:nowrap}
+
+.board-note {
+ font-family:'Caveat',cursive;
+ font-size:23px;
+ margin-top:17px;
 }
 
-/* FEATURED PHOTOGRAPH */
+/* POLAROIDS */
 
-.photo-panel {
- padding:20px;
- margin:10px;
- background:#d9c9ab;
- color:#211c16;
- box-shadow:4px 5px 13px #080705;
- transform:rotate(2deg);
+.polaroid {
+ background:var(--cream);
+ color:#211c15;
+ padding:12px 12px 5px;
+ margin:15px;
+ transform:rotate(3deg);
+ box-shadow:4px 7px 14px #080705;
  align-self:center;
 }
 
-.photo-panel img {
+.polaroid img {
  width:100%;
- height:300px;
+ height:290px;
  object-fit:cover;
- filter:sepia(15%) contrast(1.05);
+ filter:sepia(18%);
 }
 
-.photo-panel p {
+.polaroid p {
+ text-align:center;
  font-family:'Caveat',cursive;
  font-size:27px;
- text-align:center;
- padding:12px 0 4px;
+ padding:10px 0;
 }
 
-/* BOTTOM VALUES */
+/* BOTTOM WOODEN STRIP */
 
 .values {
  display:grid;
  grid-template-columns:repeat(4,1fr);
+ padding:40px 5%;
  gap:15px;
- padding:45px 5%;
  text-align:center;
- background:
- repeating-linear-gradient(3deg,#17120e,#302219 5px,#211710 10px);
- border-bottom:5px solid #675039;
 }
 
-.value-item {
- padding:10px;
-}
+.value .icon {font-size:35px;margin-bottom:12px}
 
-.value-item .symbol {
- font-size:35px;
- margin-bottom:10px;
-}
-
-.value-item h3 {
+.value h3 {
  font-family:'Special Elite',cursive;
- font-size:15px;
+ font-size:14px;
  line-height:1.5;
 }
 
-footer {
+/* FULL MENU */
+
+.details {
+ padding:65px 8%;
+ background:var(--green);
  text-align:center;
- padding:40px 20px;
- background:var(--black);
+}
+
+.details h2 {
+ font-family:'Special Elite',cursive;
+ font-size:36px;
+}
+
+.details .script {margin:15px 0 35px}
+
+.menu-group {
+ max-width:780px;
+ margin:30px auto;
+ text-align:left;
+}
+
+.menu-group h3 {
+ font-family:'Special Elite',cursive;
+ font-size:23px;
+ border-bottom:1px solid #a6a184;
+ padding-bottom:12px;
+}
+
+.menu-item {
+ display:flex;
+ justify-content:space-between;
+ gap:20px;
+ padding:13px 0;
+ border-bottom:1px dotted #829071;
+ font-size:20px;
+}
+
+.menu-item small {
+ display:block;
+ font-size:15px;
+ color:#d1c5a9;
+}
+
+/* SAMPLE TRAY */
+
+.sample {
+ background:var(--wood);
+ padding:70px 8%;
+ text-align:center;
+}
+
+.sample img {
+ width:min(100%,650px);
+ height:340px;
+ object-fit:cover;
+ margin:25px auto;
+ border:10px solid var(--cream);
+ box-shadow:5px 8px 16px #090806;
+}
+
+.sample p {
+ max-width:650px;
+ margin:auto;
+ font-size:21px;
+ line-height:1.6;
+}
+
+/* FOOTER */
+
+footer {
+ padding:45px 20px;
+ text-align:center;
 }
 
 footer h2 {
  font-family:'Special Elite',cursive;
- font-size:28px;
+ font-size:29px;
 }
 
-footer p {margin:12px;}
+footer p {margin:12px}
 
 @media(max-width:750px) {
- .scrapbook {grid-template-columns:1fr;}
- .hero {min-height:380px;}
- .values {grid-template-columns:repeat(2,1fr);}
- nav {justify-content:center;}
- nav a {margin:5px;}
+ .scrapbook {grid-template-columns:1fr}
+ nav {justify-content:center}
+ nav a {margin:5px}
+ .hero {min-height:350px}
+ .values {grid-template-columns:repeat(2,1fr)}
+ .polaroid {max-width:400px;margin:20px auto}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
- <div class="logo">✦ THE WILD THISTLE ✦</div>
+<!-- HEADER -->
+
+<nav class="wood">
+ <div class="logo">✦ THE OLD COTTAGE CAFE ✦</div>
  <div>
   <a href="#home">HOME</a>
   <a href="#story">OUR STORY</a>
-  <a href="#menu">MENU</a>
+  <a href="#coffee">COFFEE</a>
   <a href="#bakery">BAKERY</a>
-  <a href="#visit">VISIT US</a>
+  <a href="#visit">CONTACT</a>
  </div>
+ <div class="script">A cozy place to call yours ♡</div>
 </nav>
 
+<!-- HERO -->
+
 <header class="hero" id="home">
- <div class="hero-content">
-  <div class="handwriting">Freshly baked & a little wild ♡</div>
-  <h1>OLD COTTAGE<br>CAFE</h1>
-  <p>COFFEE ✦ BAKED GOODS ✦ GOOD COMPANY</p>
-  <a href="#menu" class="button">EXPLORE OUR MENU</a>
+ <div>
+  <div class="script">Come in, stay awhile...</div>
+  <h1>THE OLD<br>COTTAGE CAFE</h1>
+  <p>GOOD COFFEE ✦ FRESH BAKING ✦ GOOD COMPANY</p>
+  <a href="#coffee" class="button">COME ON IN</a>
  </div>
 </header>
 
-<div class="scrapbook" id="story">
+<!-- ORIGINAL THREE-PANEL DESIGN -->
 
- <div class="paper-panel">
-  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700" alt="Rustic artisan bread">
-  <h2>A LITTLE ABOUT US</h2>
+<main class="scrapbook" id="story">
+
+ <article class="paper">
+  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700"
+       alt="Rustic freshly baked bread">
+
+  <h2>OUR STORY</h2>
+
   <p>
-   A cozy little corner for slow mornings,
-   freshly baked bread, warm coffee and
-   people who appreciate the simple things.
-   Made with love, served with soul.
+   Welcome to our little corner of comfort.
+   A place where the coffee is simple,
+   the baked goods are fresh, and there's
+   always room for one more at the table.
+   We believe the best moments happen
+   over a warm cup and something sweet.
   </p>
-  <div class="handwriting">Good things take time. ♡</div>
+
+  <div class="script">Old-fashioned charm. Everyday comfort. ♡</div>
+ </article>
+
+ <section class="board" id="coffee">
+  <div class="script">Simple coffee. Happy hearts.</div>
+  <h2>THE COFFEE MENU</h2>
+
+  <div class="menu-line">
+   <span>SMALL</span><strong>$1.50</strong>
+  </div>
+  <div class="menu-line">
+   <span>MEDIUM</span><strong>Ask us</strong>
+  </div>
+  <div class="menu-line">
+   <span>LARGE</span><strong>Ask us</strong>
+  </div>
+  <div class="menu-line">
+   <span>XL</span><strong>Ask us</strong>
+  </div>
+  <div class="menu-line">
+   <span>JUMBO</span><strong>$6.50</strong>
+  </div>
+
+  <div class="board-note">
+   Bring your own cup! ♡
+   <br>
+   FREE REFILLS
+  </div>
+
+  <a href="#fullmenu" class="button">MORE ABOUT OUR COFFEE</a>
+ </section>
+
+ <article class="polaroid" id="bakery">
+  <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700"
+       alt="Fresh bakery pastries">
+
+  <p>Fresh from our oven ♡</p>
+ </article>
+
+</main>
+
+<!-- BOTTOM ICON STRIP -->
+
+<section class="values wood">
+ <div class="value">
+  <div class="icon">☕</div>
+  <h3>GOOD COFFEE<br>GOOD COMPANY</h3>
  </div>
 
- <div class="menu-panel" id="menu">
-  <div class="handwriting">Made fresh. Poured with love.</div>
-  <h2>THE MENU</h2>
-
-  <div class="menu-category">✦ ESPRESSO & COFFEE</div>
-  <div class="menu-category">✦ SIGNATURE LATTES</div>
-  <div class="menu-category">✦ ICED BEVERAGES</div>
-  <div class="menu-category">✦ TEA & SPECIALTY DRINKS</div>
-  <div class="menu-category">✦ FRESH BAKED GOODS</div>
-  <div class="menu-category">✦ SEASONAL FAVORITES</div>
-
-  <br>
-  <a href="#full-menu" class="button">VIEW FULL MENU</a>
+ <div class="value">
+  <div class="icon">🥐</div>
+  <h3>FRESH FROM<br>THE OVEN</h3>
  </div>
 
- <div class="photo-panel" id="bakery">
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=700" alt="Coffee and cafe treats">
-  <p>Fresh coffee, warm hearts ♡</p>
+ <div class="value">
+  <div class="icon">🌿</div>
+  <h3>FREE SMELLS<br>AND A VIEW</h3>
  </div>
 
-</div>
-
-<section class="scrapbook" id="full-menu">
-
- <div class="paper-panel">
-  <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700" alt="Fresh pastries">
-  <h2>FROM OUR OVEN</h2>
-  <p>
-   Buttery croissants, cinnamon rolls,
-   homemade cookies, artisan breads
-   and little sweet things made fresh.
-  </p>
-  <div class="handwriting">A little sweetness for your soul.</div>
+ <div class="value">
+  <div class="icon">♡</div>
+  <h3>A PLACE TO<br>FEEL AT HOME</h3>
  </div>
-
- <div class="menu-panel">
-  <div class="handwriting">Your new favorite ritual</div>
-  <h2>DRINK SOMETHING GOOD</h2>
-  <div class="menu-category">THE WILDFLOWER LATTE</div>
-  <div class="menu-category">THE DARK HORSE MOCHA</div>
-  <div class="menu-category">HONEY OAK LATTE</div>
-  <div class="menu-category">VANILLA COLD BREW</div>
-  <div class="menu-category">SEASONAL SPECIALTIES</div>
-  <br>
-  <a href="#visit" class="button">COME SAY HELLO</a>
- </div>
-
- <div class="photo-panel">
-  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700" alt="Freshly baked bread">
-  <p>Something good is baking ♡</p>
- </div>
-
 </section>
 
-<div class="values">
- <div class="value-item">
-  <div class="symbol">☕</div>
-  <h3>GOOD COFFEE<br>GOOD DAYS</h3>
+<!-- FULL COFFEE INFORMATION -->
+
+<section class="details" id="fullmenu">
+ <h2>KEEP IT SIMPLE. KEEP IT COZY.</h2>
+
+ <div class="script">Your cup, your way. ♡</div>
+
+ <div class="menu-group">
+  <h3>✦ OUR COFFEE SIZES</h3>
+
+  <div class="menu-item">
+   <span>Small</span><strong>$1.50</strong>
+  </div>
+  <div class="menu-item">
+   <span>Medium</span><strong>Price coming soon</strong>
+  </div>
+  <div class="menu-item">
+   <span>Large</span><strong>Price coming soon</strong>
+  </div>
+  <div class="menu-item">
+   <span>XL</span><strong>Price coming soon</strong>
+  </div>
+  <div class="menu-item">
+   <span>Jumbo</span><strong>$6.50</strong>
+  </div>
  </div>
- <div class="value-item">
-  <div class="symbol">✿</div>
-  <h3>MA
+
+ <div class="menu-group">
+  <h3>✦ A LITTLE SOMETHING EXTRA</h3>
+
+  <div class="menu-item">
+   <span>Bring Your Own Cup</span>
+   <strong>WELCOME!</strong>
+  </div>
+
+  <div class="menu-item">
+   <span>Free Refills</span>
+   <strong>YES!</strong>
+  </div>
+ </div>
+</section>
+
+<!-- BAKERY SAMPLE TRAY -->
+
+<section class="sample">
+ <div class="script">Something wonderful is always baking...</div>
+ <h2 style="font-family:'Special Elite';font-size:36px;margin-top:12px">
+  A TASTE OF THE COTTAGE
+ </h2>
+
+ <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200"
+      alt="Fresh baked bakery selection">
+
+ <p>
+  Not sure what to try? Take a peek at our
+  sample tray of bakery favorites!
+  Come enjoy the sights, the smells,
+  and maybe find your new favorite treat.
+ </p>
+
+ <div class="script" style="margin-top:20px">
+  FREE SMELLS AND VIEW. ♡
+ </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="wood" id="visit">
+ <h2>THE OLD COTTAGE CAFE</h2>
+ <p>COFFEE ✦ BAKERY ✦ COMMUNITY</p>
+ <div class="script">Come as you are. Stay awhile. ♡</div>
+ <p>YOUR LOCATION · YOUR BUSINESS HOURS</p>
+ <p>© 2026 THE OLD COTTAGE CAFE</p>
+</footer>
+
+</body>
+</html>
