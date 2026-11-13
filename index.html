@@ -6,682 +6,541 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sabrina Nycole's Bakehouse</title>
-
-<meta name="description" content="Sabrina Nycole's Bakehouse - Freshly baked goodness, simple coffee, rustic charm and a cozy place to stay awhile.">
+<meta name="description" content="A cozy woodland bakehouse featuring fresh bakery treats, simple coffee and cottage charm.">
 
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
 
 <style>
-
-/* =================================
-   COLORS AND GLOBAL SETTINGS
-================================= */
-
 :root {
-  --black: #151610;
-  --darkwood: #241a13;
-  --wood: #38291d;
-  --green: #263a29;
-  --deepgreen: #19291e;
-  --moss: #66734e;
-  --cream: #e4d3b2;
-  --parchment: #d7c6a5;
-  --gold: #a77b48;
+  --black:#171812;
+  --green:#263a29;
+  --deepgreen:#19291e;
+  --moss:#65734e;
+  --cream:#e4d3b2;
+  --paper:#d7c6a5;
+  --grey:#aaa99f;
+  --darkgrey:#77766e;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html {scroll-behavior:smooth;}
 
 body {
-  background: var(--black);
-  color: var(--cream);
-  font-family: 'Cormorant Garamond', serif;
-  overflow-x: hidden;
+  background:var(--black);
+  color:var(--cream);
+  font-family:'Cormorant Garamond',serif;
+  overflow-x:hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a {color:inherit;text-decoration:none;}
+img {max-width:100%;display:block;}
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* =================================
-   DISTRESSED WOOD TEXTURE
-================================= */
+/* LIGHT GREY DISTRESSED WOOD */
 
 .wood {
-  background-color: var(--darkwood);
-
+  background-color:#aaa99f;
   background-image:
     repeating-linear-gradient(
       2deg,
       transparent 0px,
-      rgba(0,0,0,.35) 2px,
+      rgba(255,255,255,.3) 2px,
       transparent 5px,
-      rgba(140,100,65,.13) 8px,
+      rgba(65,65,60,.14) 8px,
       transparent 12px
     ),
     repeating-linear-gradient(
       90deg,
-      #211811,
-      #35261b 40px,
-      #211811 85px,
-      #302117 120px
+      #aaa99f,
+      #c7c5bc 35px,
+      #99988e 75px,
+      #b9b7ae 115px
     );
-
-  border-bottom: 3px solid #59422c;
+  border-bottom:3px solid #77766e;
+  color:#292820;
 }
 
-/* =================================
-   NAVIGATION
-================================= */
+/* HEADER */
 
 nav {
-  min-height: 120px;
-  padding: 15px 5%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  position: relative;
-  z-index: 5;
+  min-height:115px;
+  padding:15px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:18px;
+  position:relative;
+  z-index:5;
 }
 
 .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .nav-logo img {
-  width: 85px;
-  height: 85px;
-  object-fit: contain;
-  border-radius: 50%;
+  width:90px;
+  height:90px;
+  object-fit:contain;
 }
 
 .nav-logo span {
-  font-family: 'Rye', serif;
-  font-size: 17px;
-  letter-spacing: 1px;
-  max-width: 160px;
+  font-family:'Rye',serif;
+  font-size:16px;
+  max-width:155px;
+  letter-spacing:1px;
 }
 
 .nav-links {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
 }
 
 .nav-links a {
-  font-family: 'Special Elite', cursive;
-  font-size: 13px;
-  letter-spacing: 1px;
-  transition: .3s;
+  font-family:'Special Elite',cursive;
+  font-size:13px;
+  letter-spacing:1px;
+  color:#292820;
 }
 
-.nav-links a:hover {
-  color: #b5c394;
-}
+.nav-links a:hover {color:#526344;}
 
-/* =================================
-   HERO SECTION
-================================= */
+/* HERO */
 
 .hero {
-  min-height: 580px;
-
+  min-height:570px;
   background:
-    linear-gradient(
-      90deg,
-      rgba(10,13,9,.88),
-      rgba(10,13,9,.48),
-      rgba(10,13,9,.10)
-    ),
+    linear-gradient(90deg,rgba(10,13,9,.87),rgba(10,13,9,.38)),
     url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=2000')
-    center 50% / cover;
-
-  display: flex;
-  align-items: center;
-
-  padding: 60px 9%;
-
-  position: relative;
-  border-bottom: 10px solid var(--wood);
+    center/cover;
+  display:flex;
+  align-items:center;
+  padding:60px 9%;
+  border-bottom:9px solid #c1bfb5;
 }
 
-.hero-content {
-  max-width: 700px;
-}
+.hero-content {max-width:700px;}
 
 .hero-script {
-  font-family: 'Caveat', cursive;
-  font-size: 34px;
-  color: var(--cream);
+  font-family:'Caveat',cursive;
+  font-size:34px;
+  color:#e4d3b2;
 }
 
 .hero h1 {
-  font-family: 'Rye', serif;
-  font-size: clamp(40px, 7vw, 82px);
-  line-height: 1.12;
-  color: #e2d0ad;
-  text-shadow: 3px 4px 5px #080806;
-  margin: 18px 0;
+  font-family:'Rye',serif;
+  font-size:clamp(45px,7vw,82px);
+  line-height:1.12;
+  color:#e4d3b2;
+  text-shadow:3px 4px 5px #080806;
+  margin:20px 0;
 }
 
 .hero p {
-  font-family: 'Special Elite', cursive;
-  font-size: 14px;
-  letter-spacing: 3px;
-  line-height: 2;
+  font-family:'Special Elite',cursive;
+  font-size:13px;
+  letter-spacing:3px;
+  line-height:2;
 }
 
 .button {
-  display: inline-block;
-  padding: 15px 28px;
-  border: 1px solid var(--cream);
-  margin-top: 25px;
-
-  font-family: 'Special Elite', cursive;
-  font-size: 13px;
-  letter-spacing: 2px;
-
-  transition: .3s;
+  display:inline-block;
+  padding:14px 27px;
+  border:1px solid var(--cream);
+  margin-top:25px;
+  font-family:'Special Elite',cursive;
+  font-size:13px;
+  letter-spacing:2px;
+  transition:.3s;
 }
 
 .button:hover {
-  background: var(--cream);
-  color: var(--black);
+  background:var(--cream);
+  color:var(--black);
 }
 
-/* Decorative greenery */
-
-.hero-decoration {
-  position: absolute;
-  right: 5%;
-  bottom: 20px;
-  font-size: 36px;
-  opacity: .8;
-}
-
-/* =================================
-   SECTION HEADINGS
-================================= */
+/* SECTION HEADINGS */
 
 .section-heading {
-  text-align: center;
-  padding: 55px 20px 25px;
+  text-align:center;
+  padding:50px 20px 25px;
 }
 
 .section-heading h2 {
-  font-family: 'Rye', serif;
-  font-size: clamp(27px, 4vw, 42px);
-  color: var(--cream);
+  font-family:'Rye',serif;
+  font-size:clamp(27px,4vw,40px);
 }
 
 .section-heading p {
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
-  color: #b9a783;
-  margin-top: 10px;
+  font-family:'Caveat',cursive;
+  font-size:28px;
+  color:#b9a783;
+  margin-top:10px;
 }
 
-/* =================================
-   OUR STORY SCRAPBOOK SECTION
-================================= */
+/* STORY */
 
 .story-section {
   background:
-    repeating-linear-gradient(
-      3deg,
-      #211811,
-      #302219 5px,
-      #1d1711 10px
-    );
-
-  padding: 45px 4%;
+    repeating-linear-gradient(3deg,#211811,#302219 5px,#1d1711 10px);
+  padding:45px 4%;
 }
 
 .story-grid {
-  max-width: 1250px;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: center;
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
 }
 
 .parchment {
   background:
-    repeating-linear-gradient(
-      2deg,
-      #d7c6a5,
-      #d7c6a5 3px,
-      #cbbb9d 5px
-    );
-
-  color: #241d16;
-  padding: 35px;
-
-  box-shadow: 5px 7px 15px #090806;
-  transform: rotate(-1deg);
+    repeating-linear-gradient(2deg,#d7c6a5,#d7c6a5 3px,#cbbb9d 5px);
+  color:#241d16;
+  padding:35px;
+  box-shadow:5px 7px 15px #090806;
+  transform:rotate(-1deg);
 }
 
 .parchment h2 {
-  font-family: 'Special Elite', cursive;
-  font-size: 32px;
-  margin-bottom: 18px;
+  font-family:'Special Elite',cursive;
+  font-size:32px;
+  margin-bottom:18px;
 }
 
 .parchment p {
-  font-size: 21px;
-  line-height: 1.7;
+  font-size:21px;
+  line-height:1.7;
 }
 
-.parchment .handwriting {
-  font-family: 'Caveat', cursive;
-  font-size: 30px;
-  color: #48543b;
-  margin-top: 20px;
+.handwriting {
+  font-family:'Caveat',cursive;
+  font-size:30px;
+  color:#48543b;
+  margin-top:20px;
 }
 
 .story-photo {
-  padding: 15px 15px 5px;
-  background: var(--cream);
-  color: #241d16;
-  transform: rotate(2deg);
-  box-shadow: 5px 8px 18px #090806;
+  padding:14px 14px 5px;
+  background:var(--cream);
+  color:#241d16;
+  transform:rotate(2deg);
+  box-shadow:5px 8px 18px #090806;
 }
 
 .story-photo img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  filter: sepia(20%);
+  width:100%;
+  height:370px;
+  object-fit:cover;
+  filter:sepia(20%);
 }
 
 .story-photo p {
-  font-family: 'Caveat', cursive;
-  font-size: 29px;
-  text-align: center;
-  padding: 12px;
+  font-family:'Caveat',cursive;
+  font-size:28px;
+  text-align:center;
+  padding:12px;
 }
 
-/* =================================
-   COFFEE MENU
-================================= */
+/* COFFEE MENU */
 
 .coffee-section {
-  padding: 65px 5%;
-
+  padding:65px 5%;
   background:
-    linear-gradient(rgba(15,24,17,.93),rgba(15,24,17,.93)),
+    linear-gradient(rgba(15,24,17,.92),rgba(15,24,17,.92)),
     url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1500')
     center/cover;
 }
 
 .coffee-board {
-  max-width: 850px;
-  margin: auto;
-
-  padding: 45px;
-  border: 8px solid #493a28;
-
+  max-width:820px;
+  margin:auto;
+  padding:40px;
+  border:8px solid #493a28;
   background:
-    repeating-linear-gradient(
-      3deg,
-      #263a29,
-      #304632 5px,
-      #1c2d20 10px
-    );
-
-  box-shadow: 6px 8px 20px #090806;
-  text-align: center;
+    repeating-linear-gradient(3deg,#263a29,#304632 5px,#1c2d20 10px);
+  box-shadow:6px 8px 20px #090806;
+  text-align:center;
 }
 
 .coffee-board .script {
-  font-family: 'Caveat', cursive;
-  font-size: 31px;
+  font-family:'Caveat',cursive;
+  font-size:31px;
 }
 
 .coffee-board h2 {
-  font-family: 'Rye', serif;
-  font-size: 40px;
-  margin: 15px 0 30px;
+  font-family:'Rye',serif;
+  font-size:38px;
+  margin:15px 0 30px;
 }
 
 .coffee-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-
-  padding: 17px 5px;
-  border-bottom: 1px dashed #9b9b79;
-
-  font-family: 'Special Elite', cursive;
-  font-size: 19px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 5px;
+  border-bottom:1px dashed #9b9b79;
+  font-family:'Special Elite',cursive;
+  font-size:19px;
 }
 
-.coffee-row strong {
-  color: #e5d3ae;
-  white-space: nowrap;
-}
+.coffee-row strong {white-space:nowrap;}
 
 .coffee-extras {
-  margin-top: 35px;
-  padding-top: 25px;
-  border-top: 2px solid #9b9b79;
+  margin-top:30px;
+  padding-top:25px;
+  border-top:2px solid #9b9b79;
 }
 
 .coffee-extras h3 {
-  font-family: 'Rye', serif;
-  font-size: 23px;
-  margin-bottom: 15px;
+  font-family:'Rye',serif;
+  font-size:22px;
+  margin-bottom:15px;
 }
 
 .coffee-extras p {
-  font-size: 21px;
-  line-height: 1.8;
+  font-size:21px;
+  line-height:1.8;
 }
 
 .coffee-extras .script {
-  margin-top: 20px;
-  color: #d5c29c;
+  margin-top:15px;
+  color:#d5c29c;
 }
 
-/* =================================
-   BRING YOUR OWN CUP
-================================= */
+/* CUP BANNER */
 
 .cup-banner {
-  background: #d5c4a3;
-  color: #241c14;
-  text-align: center;
-  padding: 35px 20px;
+  background:#c7c5bc;
+  color:#292820;
+  text-align:center;
+  padding:35px 20px;
 }
 
 .cup-banner h2 {
-  font-family: 'Rye', serif;
-  font-size: clamp(23px,4vw,35px);
+  font-family:'Rye',serif;
+  font-size:clamp(23px,4vw,34px);
 }
 
 .cup-banner p {
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
-  margin-top: 10px;
+  font-family:'Caveat',cursive;
+  font-size:28px;
+  margin-top:10px;
 }
 
-/* =================================
-   BAKERY SECTION
-================================= */
+/* BAKERY */
 
 .bakery-section {
-  padding: 65px 5%;
-  background: var(--black);
+  padding:60px 5%;
+  background:var(--black);
 }
 
 .bakery-grid {
-  max-width: 1250px;
-  margin: 35px auto;
-
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+  max-width:1200px;
+  margin:35px auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
 .bakery-card {
-  background: var(--cream);
-  padding: 12px 12px 8px;
-  color: #241c14;
-
-  box-shadow: 5px 8px 15px #080806;
-  transition: .3s;
+  background:var(--cream);
+  padding:12px 12px 7px;
+  color:#241c14;
+  box-shadow:5px 8px 15px #080806;
 }
 
-.bakery-card:nth-child(2) {
-  transform: rotate(2deg);
-}
-
-.bakery-card:nth-child(1) {
-  transform: rotate(-2deg);
-}
-
-.bakery-card:nth-child(3) {
-  transform: rotate(1deg);
-}
+.bakery-card:nth-child(1) {transform:rotate(-2deg);}
+.bakery-card:nth-child(2) {transform:rotate(2deg);}
+.bakery-card:nth-child(3) {transform:rotate(-1deg);}
 
 .bakery-card img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  filter: sepia(20%);
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  filter:sepia(20%);
 }
 
 .bakery-card h3 {
-  font-family: 'Special Elite', cursive;
-  text-align: center;
-  font-size: 20px;
-  padding: 17px 5px;
+  font-family:'Special Elite',cursive;
+  text-align:center;
+  font-size:18px;
+  padding:16px 5px;
 }
 
-/* =================================
-   COMPLIMENTARY SAMPLE TRAY
-================================= */
+/* SAMPLE TRAY */
 
 .sample-section {
-  padding: 65px 8%;
-
+  padding:65px 8%;
   background:
     linear-gradient(rgba(22,28,20,.88),rgba(22,28,20,.88)),
     url('https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?w=1500')
     center/cover;
-
-  text-align: center;
+  text-align:center;
 }
 
 .sample-section h2 {
-  font-family: 'Rye', serif;
-  font-size: clamp(26px,4vw,40px);
+  font-family:'Rye',serif;
+  font-size:clamp(26px,4vw,40px);
 }
 
 .sample-section .script {
-  font-family: 'Caveat', cursive;
-  font-size: 32px;
-  margin: 15px 0;
+  font-family:'Caveat',cursive;
+  font-size:31px;
+  margin:15px 0;
 }
 
 .sample-section p {
-  max-width: 750px;
-  margin: 20px auto;
-  font-size: 22px;
-  line-height: 1.7;
+  max-width:750px;
+  margin:20px auto;
+  font-size:22px;
+  line-height:1.7;
 }
 
 .sample-section img {
-  max-width: 700px;
-  width: 100%;
-  height: 370px;
-  object-fit: cover;
-  margin: 30px auto;
-  border: 12px solid var(--cream);
-  box-shadow: 5px 8px 18px #080806;
+  max-width:700px;
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  margin:30px auto;
+  border:12px solid var(--cream);
+  box-shadow:5px 8px 18px #080806;
 }
 
-/* =================================
-   BRAND VALUES STRIP
-================================= */
+/* VALUES */
 
 .values {
-  padding: 45px 5%;
-
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 20px;
-
-  text-align: center;
+  padding:40px 5%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  text-align:center;
 }
 
 .value-icon {
-  font-size: 37px;
-  margin-bottom: 13px;
+  font-size:35px;
+  margin-bottom:12px;
 }
 
 .values h3 {
-  font-family: 'Special Elite', cursive;
-  font-size: 15px;
-  line-height: 1.7;
+  font-family:'Special Elite',cursive;
+  font-size:14px;
+  line-height:1.7;
+  color:#292820;
 }
 
-/* =================================
-   CONTACT SECTION
-================================= */
+/* CONTACT */
 
 .contact-section {
-  padding: 65px 20px;
-  background: var(--green);
-  text-align: center;
+  padding:65px 20px;
+  background:var(--green);
+  text-align:center;
 }
 
 .contact-section h2 {
-  font-family: 'Rye', serif;
-  font-size: 35px;
+  font-family:'Rye',serif;
+  font-size:32px;
 }
 
 .contact-section p {
-  font-size: 21px;
-  margin-top: 15px;
-  line-height: 1.7;
+  font-size:21px;
+  margin-top:15px;
+  line-height:1.7;
 }
 
 .contact-section .script {
-  font-family: 'Caveat', cursive;
-  font-size: 31px;
-  margin-top: 25px;
+  font-family:'Caveat',cursive;
+  font-size:31px;
+  margin-top:25px;
 }
 
-/* =================================
-   FOOTER
-================================= */
+/* FOOTER */
 
 footer {
-  padding: 50px 20px;
-  text-align: center;
+  padding:45px 20px;
+  text-align:center;
 }
 
-.footer-logo {
-  width: 125px;
-  height: 125px;
-  object-fit: contain;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-}
-
-footer h2 {
-  font-family: 'Rye', serif;
-  font-size: 25px;
+footer .footer-script {
+  font-family:'Caveat',cursive;
+  font-size:31px;
+  color:#292820;
 }
 
 footer p {
-  font-family: 'Special Elite', cursive;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-top: 15px;
+  font-family:'Special Elite',cursive;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-top:15px;
+  color:#292820;
 }
 
-footer .script {
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
-  margin-top: 15px;
-}
-
-/* =================================
-   MOBILE RESPONSIVENESS
-================================= */
+/* MOBILE */
 
 @media(max-width:800px) {
-
   nav {
-    justify-content: center;
-    text-align: center;
+    justify-content:center;
+    text-align:center;
   }
 
   .nav-logo {
-    flex-direction: column;
+    flex-direction:column;
   }
 
   .nav-links {
-    justify-content: center;
-    gap: 17px;
+    justify-content:center;
+    gap:16px;
   }
 
   .hero {
-    min-height: 450px;
-    padding: 45px 7%;
+    min-height:440px;
+    padding:45px 7%;
   }
 
   .story-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   .bakery-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
+    grid-template-columns:1fr;
+    max-width:450px;
   }
 
   .coffee-board {
-    padding: 25px 18px;
+    padding:25px 18px;
   }
 
   .coffee-board h2 {
-    font-size: 30px;
+    font-size:30px;
   }
 
   .coffee-row {
-    font-size: 15px;
+    font-size:16px;
   }
 
   .values {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
   }
 
   .parchment {
-    padding: 25px;
+    padding:25px;
   }
 }
 
 @media(max-width:430px) {
-
-  .hero p {
-    font-size: 11px;
-  }
-
-  .nav-links a {
-    font-size: 11px;
-  }
-
-  .values h3 {
-    font-size: 12px;
-  }
-
-  .sample-section img {
-    height: 250px;
-  }
-
+  .hero p {font-size:10px;}
+  .nav-links a {font-size:11px;}
+  .values h3 {font-size:11px;}
+  .sample-section img {height:250px;}
 }
 
 </style>
@@ -689,14 +548,12 @@ footer .script {
 
 <body>
 
-<!-- =================================
-     HEADER
-================================= -->
+<!-- HEADER: LOGO APPEARS HERE -->
 
 <nav class="wood">
 
   <a href="#home" class="nav-logo">
-    <img src="images/logo.png" alt="Sabrina Nycole's Bakehouse Logo">
+    <img src="images/logo.png" alt="Sabrina Nycole's Bakehouse logo">
     <span>SABRINA NYCOLE'S BAKEHOUSE</span>
   </a>
 
@@ -710,10 +567,7 @@ footer .script {
 
 </nav>
 
-
-<!-- =================================
-     HERO / WELCOME
-================================= -->
+<!-- WELCOME -->
 
 <header class="hero" id="home">
 
@@ -724,29 +578,21 @@ footer .script {
     </div>
 
     <h1>
-      SABRINA<br>
-      NYCOLE'S<br>
-      BAKEHOUSE
+      FRESH FROM<br>
+      THE COTTAGE
     </h1>
 
     <p>
       HOMEMADE GOODNESS ✦ SIMPLE COFFEE ✦ RUSTIC CHARM
     </p>
 
-    <a href="#bakery" class="button">
-      COME ON IN
-    </a>
+    <a href="#bakery" class="button">COME ON IN</a>
 
   </div>
 
-  <div class="hero-decoration">🌿</div>
-
 </header>
 
-
-<!-- =================================
-     OUR STORY
-================================= -->
+<!-- OUR STORY -->
 
 <section class="story-section" id="story">
 
@@ -762,16 +608,15 @@ footer .script {
       <h2>OUR STORY</h2>
 
       <p>
-        Welcome to Sabrina Nycole's Bakehouse,
-        where homemade goodness meets old-fashioned
-        cottage charm.
+        Welcome to our little bakehouse, where homemade
+        goodness meets old-fashioned cottage charm.
 
         <br><br>
 
         We believe the simplest things are often
         the sweetest: the smell of something fresh
-        from the oven, a warm cup of coffee,
-        and sharing a little something delicious.
+        from the oven, a warm cup of coffee, and
+        sharing a little something delicious.
 
         <br><br>
 
@@ -801,49 +646,39 @@ footer .script {
 
 </section>
 
-
-<!-- =================================
-     COFFEE MENU
-================================= -->
+<!-- COFFEE MENU -->
 
 <section class="coffee-section" id="coffee">
 
   <div class="coffee-board">
 
-    <div class="script">
-      Freshly brewed, just for you
-    </div>
+    <div class="script">Freshly brewed, just for you</div>
 
     <h2>THE COFFEE MENU</h2>
 
     <div class="coffee-row">
-      <span>SMALL</span>
-      <strong>$1.50</strong>
+      <span>SMALL</span><strong>$1.50</strong>
     </div>
 
     <div class="coffee-row">
-      <span>MEDIUM</span>
-      <strong>$2.75</strong>
+      <span>MEDIUM</span><strong>$2.75</strong>
     </div>
 
     <div class="coffee-row">
-      <span>LARGE</span>
-      <strong>$4.15</strong>
+      <span>LARGE</span><strong>$4.15</strong>
     </div>
 
     <div class="coffee-row">
-      <span>XL</span>
-      <strong>$5.25</strong>
+      <span>XL</span><strong>$5.25</strong>
     </div>
 
     <div class="coffee-row">
-      <span>JUMBO</span>
-      <strong>$6.50</strong>
+      <span>JUMBO</span><strong>$6.50</strong>
     </div>
 
     <div class="coffee-extras">
 
-      <h3>✦ A LITTLE SOMETHING EXTRA ✦</h3>
+      <h3>A LITTLE SOMETHING EXTRA</h3>
 
       <p>
         Bring Your Own Cup — WELCOME!
@@ -851,9 +686,7 @@ footer .script {
         FREE REFILLS ON ALL SIZES
       </p>
 
-      <div class="script">
-        Your cup, your way. ♡
-      </div>
+      <div class="script">Your cup, your way. ♡</div>
 
     </div>
 
@@ -861,10 +694,7 @@ footer .script {
 
 </section>
 
-
-<!-- =================================
-     BRING YOUR OWN CUP
-================================= -->
+<!-- BRING YOUR OWN CUP -->
 
 <section class="cup-banner">
 
@@ -876,66 +706,46 @@ footer .script {
 
 </section>
 
-
-<!-- =================================
-     BAKERY
-================================= -->
+<!-- BAKERY -->
 
 <section class="bakery-section" id="bakery">
 
   <div class="section-heading">
-
     <h2>FRESH FROM THE BAKEHOUSE</h2>
-
-    <p>
-      A little sweetness for your soul ♡
-    </p>
-
+    <p>A little sweetness for your soul ♡</p>
   </div>
 
   <div class="bakery-grid">
 
     <article class="bakery-card">
-
       <img
         src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800"
-        alt="Freshly baked croissants"
+        alt="Freshly baked pastries"
       >
-
       <h3>FRESHLY BAKED GOODNESS</h3>
-
     </article>
 
     <article class="bakery-card">
-
       <img
         src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800"
         alt="Homemade cookies"
       >
-
       <h3>SOMETHING SWEET</h3>
-
     </article>
 
     <article class="bakery-card">
-
       <img
         src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"
         alt="Rustic homemade bread"
       >
-
       <h3>MADE WITH LOVE</h3>
-
     </article>
 
   </div>
 
 </section>
 
-
-<!-- =================================
-     COMPLIMENTARY SAMPLE TRAY
-================================= -->
+<!-- COMPLIMENTARY SAMPLES -->
 
 <section class="sample-section">
 
@@ -943,25 +753,21 @@ footer .script {
     Something wonderful is always baking...
   </div>
 
-  <h2>
-    A TASTE OF THE BAKEHOUSE
-  </h2>
+  <h2>A TASTE OF THE BAKEHOUSE</h2>
 
- <img
-  src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1200"
-  alt="Fresh homemade bakery treats"
-  onerror="this.src='https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1200'"
->
+  <img
+    src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1200"
+    alt="Homemade bakery treats"
   >
 
   <p>
-    Not sure what to try? We'd love for you
-    to experience a little taste of our bakery!
+    Not sure what to try? We'd love for you to
+    experience a little taste of our bakery!
 
     <br><br>
 
-    Enjoy our complimentary sample tray
-    featuring a selection of our bakery items.
+    Enjoy our complimentary sample tray featuring
+    a selection of our bakery items.
 
     Come for the coffee, stay for the treats!
   </p>
@@ -972,63 +778,33 @@ footer .script {
 
 </section>
 
-
-<!-- =================================
-     BRAND VALUES
-================================= -->
+<!-- VALUES -->
 
 <section class="values wood">
 
   <div class="value">
-
     <div class="value-icon">☕</div>
-
-    <h3>
-      SIMPLE COFFEE<br>
-      HAPPY HEARTS
-    </h3>
-
+    <h3>SIMPLE COFFEE<br>HAPPY HEARTS</h3>
   </div>
 
   <div class="value">
-
     <div class="value-icon">🥐</div>
-
-    <h3>
-      FRESH FROM<br>
-      THE OVEN
-    </h3>
-
+    <h3>FRESH FROM<br>THE OVEN</h3>
   </div>
 
   <div class="value">
-
     <div class="value-icon">🌿</div>
-
-    <h3>
-      FREE SMELLS<br>
-      AND A VIEW
-    </h3>
-
+    <h3>FREE SMELLS<br>AND A VIEW</h3>
   </div>
 
   <div class="value">
-
     <div class="value-icon">♡</div>
-
-    <h3>
-      MADE WITH<br>
-      LOVE
-    </h3>
-
+    <h3>MADE WITH<br>LOVE</h3>
   </div>
 
 </section>
 
-
-<!-- =================================
-     CONTACT
-================================= -->
+<!-- CONTACT -->
 
 <section class="contact-section" id="contact">
 
@@ -1036,7 +812,9 @@ footer .script {
 
   <p>
     We'd love to welcome you!
+
     <br>
+
     Stop by, grab a coffee, and enjoy something fresh.
   </p>
 
@@ -1050,31 +828,20 @@ footer .script {
 
 </section>
 
-
-<!-- =================================
-     FOOTER
-================================= -->
+<!-- FOOTER: NO REPEATED BUSINESS NAME -->
 
 <footer class="wood">
 
-  <img
-    src="images/logo.png"
-    class="footer-logo"
-    alt="Sabrina Nycole's Bakehouse"
-  >
-
-  <h2>SABRINA NYCOLE'S BAKEHOUSE</h2>
+  <div class="footer-script">
+    Come as you are. Stay awhile. ♡
+  </div>
 
   <p>
     HOMEMADE GOODNESS ✦ COFFEE ✦ COMMUNITY
   </p>
 
-  <div class="script">
-    Homemade with heart. Rooted in rustic charm. ♡
-  </div>
-
   <p>
-    © 2026 SABRINA NYCOLE'S BAKEHOUSE
+    © 2026
   </p>
 
 </footer>
