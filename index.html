@@ -4,847 +4,844 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabrina Nycole's Bakehouse | A Little Cottage Magic</title>
 
-<title>Sabrina Nycole's Bakehouse</title>
-<meta name="description" content="A cozy woodland bakehouse featuring fresh bakery treats, simple coffee and cottage charm.">
-
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Special+Elite&family=Rye&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --black:#171812;
-  --green:#263a29;
-  --deepgreen:#19291e;
-  --moss:#65734e;
-  --cream:#e4d3b2;
-  --paper:#d7c6a5;
-  --grey:#aaa99f;
-  --darkgrey:#77766e;
+  --mahogany: #21100c;
+  --mahogany-light: #382019;
+  --cream: #f0d9b5;
+  --parchment: #d9b98c;
+  --green: #14251b;
+  --gold: #c59a65;
+  --ink: #24150e;
 }
 
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html {scroll-behavior:smooth;}
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background:var(--black);
-  color:var(--cream);
-  font-family:'Cormorant Garamond',serif;
-  overflow-x:hidden;
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--mahogany);
+  background-image:
+    linear-gradient(rgba(20,8,5,.48), rgba(20,8,5,.62)),
+    url("https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1800&q=85");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-a {color:inherit;text-decoration:none;}
-img {max-width:100%;display:block;}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-/* LIGHT GREY DISTRESSED WOOD */
+img {
+  max-width: 100%;
+  display: block;
+}
 
-.wood {
-  background-color:#aaa99f;
-  background-image:
+.page {
+  max-width: 1500px;
+  margin: auto;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(26,10,7,.45),rgba(26,10,7,.55)),
+    repeating-linear-gradient(
+      0deg,
+      #24110c 0px,
+      #321a12 35px,
+      #170b08 39px,
+      #3a2017 44px,
+      #1d0d09 80px
+    );
+  border-left: 1px solid #765039;
+  border-right: 1px solid #765039;
+  box-shadow: 0 0 55px #000;
+  position: relative;
+}
+
+.wood-grain {
+  background:
     repeating-linear-gradient(
       2deg,
       transparent 0px,
-      rgba(255,255,255,.3) 2px,
-      transparent 5px,
-      rgba(65,65,60,.14) 8px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      #aaa99f,
-      #c7c5bc 35px,
-      #99988e 75px,
-      #b9b7ae 115px
+      rgba(0,0,0,.13) 3px,
+      transparent 7px,
+      rgba(190,125,75,.08) 10px,
+      transparent 18px
     );
-  border-bottom:3px solid #77766e;
-  color:#292820;
 }
 
-/* HEADER */
+header {
+  min-height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 15px 5%;
+  border-bottom: 5px double #81583b;
+  background: rgba(19,8,6,.88);
+  position: relative;
+  z-index: 5;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-area img {
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: -5px 0 -25px;
+  filter: drop-shadow(0 5px 10px #000);
+  position: relative;
+  z-index: 6;
+}
+
+.brand-fallback {
+  display: none;
+  font-family: 'Rye', serif;
+  color: var(--cream);
+  font-size: 20px;
+  text-align: center;
+  max-width: 180px;
+}
 
 nav {
-  min-height:115px;
-  padding:15px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:18px;
-  position:relative;
-  z-index:5;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-family: 'Special Elite', serif;
+  color: var(--cream);
+  font-size: 15px;
+  letter-spacing: 1px;
 }
 
-.nav-logo {
-  display:flex;
-  align-items:center;
-  gap:12px;
+nav a {
+  transition: .25s;
 }
 
-.nav-logo img {
-  width:90px;
-  height:90px;
-  object-fit:contain;
+nav a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 10px #bd8a51;
 }
 
-.nav-logo span {
-  font-family:'Rye',serif;
-  font-size:16px;
-  max-width:155px;
-  letter-spacing:1px;
+nav span {
+  color: var(--gold);
 }
-
-.nav-links {
-  display:flex;
-  gap:25px;
-  flex-wrap:wrap;
-}
-
-.nav-links a {
-  font-family:'Special Elite',cursive;
-  font-size:13px;
-  letter-spacing:1px;
-  color:#292820;
-}
-
-.nav-links a:hover {color:#526344;}
-
-/* HERO */
 
 .hero {
-  min-height:570px;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  padding: 65px 7%;
   background:
-    linear-gradient(90deg,rgba(10,13,9,.87),rgba(10,13,9,.38)),
-    url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=2000')
-    center/cover;
-  display:flex;
-  align-items:center;
-  padding:60px 9%;
-  border-bottom:9px solid #c1bfb5;
+    linear-gradient(90deg, rgba(17,7,5,.96) 0%, rgba(20,9,6,.77) 47%, rgba(20,9,6,.12) 100%),
+    url("https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1800&q=90");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 5px double #875b3b;
+  position: relative;
 }
 
-.hero-content {max-width:700px;}
+.hero-content {
+  max-width: 620px;
+}
 
-.hero-script {
-  font-family:'Caveat',cursive;
-  font-size:34px;
-  color:#e4d3b2;
+.script {
+  font-family: 'Caveat', cursive;
+  color: #e6c69c;
+  font-size: 34px;
+  line-height: 1.15;
 }
 
 .hero h1 {
-  font-family:'Rye',serif;
-  font-size:clamp(45px,7vw,82px);
-  line-height:1.12;
-  color:#e4d3b2;
-  text-shadow:3px 4px 5px #080806;
-  margin:20px 0;
+  font-family: 'Rye', serif;
+  font-weight: 400;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.03;
+  color: #f0d5ad;
+  text-shadow: 3px 4px 4px #000;
+  margin: 12px 0 18px;
 }
 
-.hero p {
-  font-family:'Special Elite',cursive;
-  font-size:13px;
-  letter-spacing:3px;
-  line-height:2;
+.hero-subtitle {
+  font-family: 'Special Elite', serif;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
 }
 
-.button {
-  display:inline-block;
-  padding:14px 27px;
-  border:1px solid var(--cream);
-  margin-top:25px;
-  font-family:'Special Elite',cursive;
-  font-size:13px;
-  letter-spacing:2px;
-  transition:.3s;
+.ornament {
+  color: var(--gold);
+  font-size: 24px;
+  margin: 20px 0;
+  letter-spacing: 7px;
 }
 
-.button:hover {
-  background:var(--cream);
-  color:var(--black);
+.come-in {
+  display: inline-block;
+  padding: 10px 28px;
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  font-family: 'Caveat', cursive;
+  font-size: 31px;
+  color: var(--cream);
+  transition: .25s;
 }
 
-/* SECTION HEADINGS */
+.come-in:hover {
+  background: rgba(197,154,101,.14);
+  letter-spacing: 2px;
+}
+
+.section {
+  padding: 45px 6%;
+  position: relative;
+}
+
+.paper {
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(225,197,157,.89),rgba(205,170,124,.94)),
+    repeating-linear-gradient(90deg,#d9b98c,#ead5b2 5px,#d1ad7b 10px);
+  border: 8px double #69442a;
+  box-shadow: 0 9px 22px rgba(0,0,0,.65);
+  position: relative;
+}
+
+.paper:before,
+.paper:after {
+  content: "✦";
+  position: absolute;
+  color: #69442a;
+  font-size: 25px;
+  opacity: .65;
+}
+
+.paper:before {
+  top: 10px;
+  left: 15px;
+}
+
+.paper:after {
+  bottom: 10px;
+  right: 15px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.about-paper {
+  padding: 35px 40px;
+  text-align: center;
+}
 
 .section-heading {
-  text-align:center;
-  padding:50px 20px 25px;
+  font-family: 'Rye', serif;
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.section-heading h2 {
-  font-family:'Rye',serif;
-  font-size:clamp(27px,4vw,40px);
+.about-paper .script {
+  color: #3b2418;
+  font-size: 32px;
+  margin-bottom: 18px;
 }
 
-.section-heading p {
-  font-family:'Caveat',cursive;
-  font-size:28px;
-  color:#b9a783;
-  margin-top:10px;
+.about-paper p {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 12px 0;
 }
 
-/* STORY */
+.about-signature {
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  margin-top: 20px;
+}
 
-.story-section {
+.photo-frame {
+  background: #d6b78e;
+  padding: 13px 13px 35px;
+  box-shadow: 0 8px 18px #000;
+  transform: rotate(3deg);
+  color: #382115;
+  text-align: center;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  filter: sepia(.25) contrast(1.05);
+}
+
+.photo-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 27px;
+  padding-top: 8px;
+}
+
+.coffee-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.menu-board {
   background:
-    repeating-linear-gradient(3deg,#211811,#302219 5px,#1d1711 10px);
-  padding:45px 4%;
+    linear-gradient(rgba(8,22,14,.91),rgba(8,22,14,.95)),
+    repeating-linear-gradient(0deg,#18291d,#23382a 3px,#101d15 7px);
+  border: 7px double #9b7048;
+  box-shadow: 0 9px 22px #000;
+  padding: 30px;
+  color: #ead2ac;
+  text-align: center;
 }
 
-.story-grid {
-  max-width:1200px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
+.menu-board .script {
+  font-size: 31px;
 }
 
-.parchment {
-  background:
-    repeating-linear-gradient(2deg,#d7c6a5,#d7c6a5 3px,#cbbb9d 5px);
-  color:#241d16;
-  padding:35px;
-  box-shadow:5px 7px 15px #090806;
-  transform:rotate(-1deg);
+.menu-board h2 {
+  font-family: 'Rye', serif;
+  font-size: 34px;
+  font-weight: 400;
+  margin: 7px 0 20px;
 }
 
-.parchment h2 {
-  font-family:'Special Elite',cursive;
-  font-size:32px;
-  margin-bottom:18px;
+.menu-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: 'Special Elite', serif;
+  font-size: 17px;
+  padding: 6px 0;
+  border-bottom: 1px dotted #b18a5f;
 }
 
-.parchment p {
-  font-size:21px;
-  line-height:1.7;
+.menu-line .dots {
+  flex: 1;
+  border-bottom: 1px dotted #b18a5f;
 }
 
-.handwriting {
-  font-family:'Caveat',cursive;
-  font-size:30px;
-  color:#48543b;
-  margin-top:20px;
+.menu-line strong {
+  font-weight: 400;
 }
 
-.story-photo {
-  padding:14px 14px 5px;
-  background:var(--cream);
-  color:#241d16;
-  transform:rotate(2deg);
-  box-shadow:5px 8px 18px #090806;
+.menu-note {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #a98256;
+  font-size: 19px;
+  line-height: 1.5;
 }
 
-.story-photo img {
-  width:100%;
-  height:370px;
-  object-fit:cover;
-  filter:sepia(20%);
+.byo-paper {
+  padding: 35px 25px;
+  text-align: center;
+  transform: rotate(-1deg);
 }
 
-.story-photo p {
-  font-family:'Caveat',cursive;
-  font-size:28px;
-  text-align:center;
-  padding:12px;
+.byo-paper h2 {
+  font-family: 'Rye', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 16px;
 }
 
-/* COFFEE MENU */
-
-.coffee-section {
-  padding:65px 5%;
-  background:
-    linear-gradient(rgba(15,24,17,.92),rgba(15,24,17,.92)),
-    url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1500')
-    center/cover;
+.byo-paper .script {
+  color: #3d2619;
+  font-size: 35px;
 }
 
-.coffee-board {
-  max-width:820px;
-  margin:auto;
-  padding:40px;
-  border:8px solid #493a28;
-  background:
-    repeating-linear-gradient(3deg,#263a29,#304632 5px,#1c2d20 10px);
-  box-shadow:6px 8px 20px #090806;
-  text-align:center;
+.byo-paper p {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-top: 15px;
 }
 
-.coffee-board .script {
-  font-family:'Caveat',cursive;
-  font-size:31px;
+.bakery-heading {
+  text-align: center;
+  padding: 15px 0 30px;
 }
 
-.coffee-board h2 {
-  font-family:'Rye',serif;
-  font-size:38px;
-  margin:15px 0 30px;
+.bakery-heading h2 {
+  font-family: 'Rye', serif;
+  font-size: 34px;
+  font-weight: 400;
 }
 
-.coffee-row {
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:16px 5px;
-  border-bottom:1px dashed #9b9b79;
-  font-family:'Special Elite',cursive;
-  font-size:19px;
-}
-
-.coffee-row strong {white-space:nowrap;}
-
-.coffee-extras {
-  margin-top:30px;
-  padding-top:25px;
-  border-top:2px solid #9b9b79;
-}
-
-.coffee-extras h3 {
-  font-family:'Rye',serif;
-  font-size:22px;
-  margin-bottom:15px;
-}
-
-.coffee-extras p {
-  font-size:21px;
-  line-height:1.8;
-}
-
-.coffee-extras .script {
-  margin-top:15px;
-  color:#d5c29c;
-}
-
-/* CUP BANNER */
-
-.cup-banner {
-  background:#c7c5bc;
-  color:#292820;
-  text-align:center;
-  padding:35px 20px;
-}
-
-.cup-banner h2 {
-  font-family:'Rye',serif;
-  font-size:clamp(23px,4vw,34px);
-}
-
-.cup-banner p {
-  font-family:'Caveat',cursive;
-  font-size:28px;
-  margin-top:10px;
-}
-
-/* BAKERY */
-
-.bakery-section {
-  padding:60px 5%;
-  background:var(--black);
+.bakery-heading .script {
+  font-size: 31px;
 }
 
 .bakery-grid {
-  max-width:1200px;
-  margin:35px auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 35px;
+  align-items: center;
 }
 
-.bakery-card {
-  background:var(--cream);
-  padding:12px 12px 7px;
-  color:#241c14;
-  box-shadow:5px 8px 15px #080806;
+.bakery-grid .photo-frame:nth-child(1) {
+  transform: rotate(-4deg);
 }
 
-.bakery-card:nth-child(1) {transform:rotate(-2deg);}
-.bakery-card:nth-child(2) {transform:rotate(2deg);}
-.bakery-card:nth-child(3) {transform:rotate(-1deg);}
-
-.bakery-card img {
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  filter:sepia(20%);
+.bakery-grid .photo-frame:nth-child(2) {
+  transform: rotate(2deg);
 }
 
-.bakery-card h3 {
-  font-family:'Special Elite',cursive;
-  text-align:center;
-  font-size:18px;
-  padding:16px 5px;
+.bakery-grid .photo-frame:nth-child(3) {
+  transform: rotate(-2deg);
 }
 
-/* SAMPLE TRAY */
-
-.sample-section {
-  padding:65px 8%;
-  background:
-    linear-gradient(rgba(22,28,20,.88),rgba(22,28,20,.88)),
-    url('https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?w=1500')
-    center/cover;
-  text-align:center;
+.bakery-grid img {
+  height: 220px;
 }
 
-.sample-section h2 {
-  font-family:'Rye',serif;
-  font-size:clamp(26px,4vw,40px);
+.samples-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
 }
 
-.sample-section .script {
-  font-family:'Caveat',cursive;
-  font-size:31px;
-  margin:15px 0;
+.sample-paper {
+  padding: 30px;
+  text-align: center;
 }
 
-.sample-section p {
-  max-width:750px;
-  margin:20px auto;
-  font-size:22px;
-  line-height:1.7;
+.sample-paper .script {
+  color: #3b2418;
+  font-size: 34px;
 }
 
-.sample-section img {
-  max-width:700px;
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  margin:30px auto;
-  border:12px solid var(--cream);
-  box-shadow:5px 8px 18px #080806;
+.sample-paper h2 {
+  font-family: 'Rye', serif;
+  font-weight: 400;
+  font-size: 26px;
+  margin: 10px 0;
 }
 
-/* VALUES */
+.sample-paper p {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 12px 0;
+}
+
+.sample-photo {
+  transform: rotate(-3deg);
+}
+
+.sample-photo img {
+  height: 300px;
+}
 
 .values {
-  padding:40px 5%;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  text-align:center;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  border-top: 4px double #8d6240;
+  border-bottom: 4px double #8d6240;
+  background: rgba(11,20,14,.82);
+  padding: 28px 3%;
+  text-align: center;
 }
 
-.value-icon {
-  font-size:35px;
-  margin-bottom:12px;
+.value {
+  padding: 10px;
+  border-right: 1px solid #806044;
 }
 
-.values h3 {
-  font-family:'Special Elite',cursive;
-  font-size:14px;
-  line-height:1.7;
-  color:#292820;
+.value:last-child {
+  border-right: 0;
 }
 
-/* CONTACT */
-
-.contact-section {
-  padding:65px 20px;
-  background:var(--green);
-  text-align:center;
+.value .symbol {
+  font-size: 35px;
+  color: #e6c69c;
 }
 
-.contact-section h2 {
-  font-family:'Rye',serif;
-  font-size:32px;
+.value p {
+  font-family: 'Special Elite', serif;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-top: 8px;
 }
 
-.contact-section p {
-  font-size:21px;
-  margin-top:15px;
-  line-height:1.7;
+.contact {
+  padding: 55px 20px;
+  text-align: center;
 }
 
-.contact-section .script {
-  font-family:'Caveat',cursive;
-  font-size:31px;
-  margin-top:25px;
+.contact h2 {
+  font-family: 'Rye', serif;
+  font-weight: 400;
+  font-size: 33px;
 }
 
-/* FOOTER */
+.contact .script {
+  font-size: 35px;
+}
+
+.contact p {
+  font-size: 19px;
+  margin: 12px 0;
+}
+
+.contact a {
+  color: #e8c49a;
+  text-decoration: underline;
+}
 
 footer {
-  padding:45px 20px;
-  text-align:center;
-}
-
-footer .footer-script {
-  font-family:'Caveat',cursive;
-  font-size:31px;
-  color:#292820;
+  padding: 25px 15px;
+  text-align: center;
+  border-top: 5px double #855a3b;
+  background: rgba(12,5,4,.9);
 }
 
 footer p {
-  font-family:'Special Elite',cursive;
-  font-size:12px;
-  letter-spacing:2px;
-  margin-top:15px;
-  color:#292820;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: #e8c49a;
 }
 
-/* MOBILE */
+footer small {
+  display: block;
+  color: #b99a77;
+  margin-top: 10px;
+  font-size: 14px;
+}
 
-@media(max-width:800px) {
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    padding: 15px 10px 20px;
+  }
+
+  .logo-area img {
+    width: 125px;
+    height: 125px;
+    margin: 0;
+  }
+
   nav {
-    justify-content:center;
-    text-align:center;
-  }
-
-  .nav-logo {
-    flex-direction:column;
-  }
-
-  .nav-links {
-    justify-content:center;
-    gap:16px;
+    justify-content: center;
+    gap: 13px;
+    font-size: 12px;
   }
 
   .hero {
-    min-height:440px;
-    padding:45px 7%;
+    min-height: 470px;
+    padding: 50px 7%;
+    background-position: 60% center;
   }
 
-  .story-grid {
-    grid-template-columns:1fr;
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .about-grid,
+  .coffee-grid,
+  .samples-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-paper {
+    padding: 30px 20px;
+  }
+
+  .about-grid .photo-frame {
+    max-width: 480px;
+    margin: 10px auto;
   }
 
   .bakery-grid {
-    grid-template-columns:1fr;
-    max-width:450px;
+    grid-template-columns: 1fr;
+    max-width: 430px;
+    margin: auto;
+    gap: 25px;
   }
 
-  .coffee-board {
-    padding:25px 18px;
+  .bakery-grid .photo-frame {
+    transform: rotate(0deg) !important;
   }
 
-  .coffee-board h2 {
-    font-size:30px;
-  }
-
-  .coffee-row {
-    font-size:16px;
+  .bakery-grid img {
+    height: 250px;
   }
 
   .values {
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns: 1fr 1fr;
   }
 
-  .parchment {
-    padding:25px;
+  .value:nth-child(2) {
+    border-right: 0;
+  }
+
+  .value:nth-child(1),
+  .value:nth-child(2) {
+    border-bottom: 1px solid #806044;
   }
 }
 
-@media(max-width:430px) {
-  .hero p {font-size:10px;}
-  .nav-links a {font-size:11px;}
-  .values h3 {font-size:11px;}
-  .sample-section img {height:250px;}
-}
+@media (max-width: 430px) {
+  .hero h1 {
+    font-size: 36px;
+  }
 
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 30px 5%;
+  }
+
+  .section-heading {
+    font-size: 26px;
+  }
+
+  .menu-board {
+    padding: 22px 15px;
+  }
+
+  .menu-line {
+    font-size: 15px;
+  }
+
+  .values {
+    padding: 20px 2%;
+  }
+}
 </style>
 </head>
 
 <body>
+<div class="page wood-grain">
 
-<!-- HEADER: LOGO APPEARS HERE -->
+<header>
+  <div class="logo-area">
+    <img src="images/logo.png"
+         alt="Sabrina Nycole's Bakehouse logo"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+    <div class="brand-fallback">Sabrina Nycole's Bakehouse</div>
+  </div>
 
-<nav class="wood">
-
-  <a href="#home" class="nav-logo">
-    <img src="images/logo.png" alt="Sabrina Nycole's Bakehouse logo">
-    <span>SABRINA NYCOLE'S BAKEHOUSE</span>
-  </a>
-
-  <div class="nav-links">
-    <a href="#home">HOME</a>
-    <a href="#story">OUR STORY</a>
-    <a href="#coffee">COFFEE</a>
-    <a href="#bakery">BAKERY</a>
+  <nav>
+    <a href="#home">HOME</a><span>✦</span>
+    <a href="#story">OUR STORY</a><span>✦</span>
+    <a href="#coffee">COFFEE</a><span>✦</span>
+    <a href="#bakery">BAKERY</a><span>✦</span>
     <a href="#contact">CONTACT</a>
-  </div>
-
-</nav>
-
-<!-- WELCOME -->
-
-<header class="hero" id="home">
-
-  <div class="hero-content">
-
-    <div class="hero-script">
-      A little cottage magic...
-    </div>
-
-    <h1>
-      FRESH FROM<br>
-      THE COTTAGE
-    </h1>
-
-    <p>
-      HOMEMADE GOODNESS ✦ SIMPLE COFFEE ✦ RUSTIC CHARM
-    </p>
-
-    <a href="#bakery" class="button">COME ON IN</a>
-
-  </div>
-
+  </nav>
 </header>
 
-<!-- OUR STORY -->
-
-<section class="story-section" id="story">
-
-  <div class="section-heading">
-    <h2>A LITTLE ABOUT US</h2>
-    <p>Welcome to our little corner of comfort ♡</p>
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="script">A little cottage magic. ♡</div>
+    <h1>FRESH FROM<br>THE COTTAGE</h1>
+    <p class="hero-subtitle">
+      HOMEMADE GOODNESS ✦ SIMPLE COFFEE ✦ RUSTIC CHARM
+    </p>
+    <div class="ornament">───── ❧ ✦ ❧ ─────</div>
+    <a class="come-in" href="#story">✧ COME ON IN ✧</a>
   </div>
+</section>
 
-  <div class="story-grid">
-
-    <div class="parchment">
-
-      <h2>OUR STORY</h2>
+<section class="section" id="story">
+  <div class="about-grid">
+    <div class="paper about-paper">
+      <h2 class="section-heading">A LITTLE ABOUT US</h2>
+      <div class="script">Welcome to our little corner of comfort ♡</div>
 
       <p>
         Welcome to our little bakehouse, where homemade
         goodness meets old-fashioned cottage charm.
-
-        <br><br>
-
-        We believe the simplest things are often
-        the sweetest: the smell of something fresh
-        from the oven, a warm cup of coffee, and
-        sharing a little something delicious.
-
-        <br><br>
-
-        Whether you're stopping by for coffee,
-        picking up a bakery favorite, or enjoying
-        a little sample, we're happy you're here.
       </p>
-
-      <div class="handwriting">
-        Homemade with heart. ♡
-      </div>
-
-    </div>
-
-    <div class="story-photo">
-
-      <img
-        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000"
-        alt="Fresh rustic artisan bread"
-      >
-
-      <p>Made with love, shared with joy ♡</p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- COFFEE MENU -->
-
-<section class="coffee-section" id="coffee">
-
-  <div class="coffee-board">
-
-    <div class="script">Freshly brewed, just for you</div>
-
-    <h2>THE COFFEE MENU</h2>
-
-    <div class="coffee-row">
-      <span>SMALL</span><strong>$1.50</strong>
-    </div>
-
-    <div class="coffee-row">
-      <span>MEDIUM</span><strong>$2.75</strong>
-    </div>
-
-    <div class="coffee-row">
-      <span>LARGE</span><strong>$4.15</strong>
-    </div>
-
-    <div class="coffee-row">
-      <span>XL</span><strong>$5.25</strong>
-    </div>
-
-    <div class="coffee-row">
-      <span>JUMBO</span><strong>$6.50</strong>
-    </div>
-
-    <div class="coffee-extras">
-
-      <h3>A LITTLE SOMETHING EXTRA</h3>
 
       <p>
-        Bring Your Own Cup — WELCOME!
-        <br>
-        FREE REFILLS ON ALL SIZES
+        We believe the simplest things are often the sweetest:
+        the smell of something fresh from the oven, a warm cup
+        of coffee, and sharing a little something delicious.
       </p>
 
-      <div class="script">Your cup, your way. ♡</div>
+      <p>
+        Whether you're stopping by for coffee, picking up a
+        bakery favorite, or enjoying a little sample,
+        we're happy you're here.
+      </p>
 
+      <div class="about-signature">Homemade with heart. ♡</div>
     </div>
 
+    <div class="photo-frame">
+      <img
+        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+        alt="Rustic freshly baked bread">
+      <div class="photo-caption">Made with love, shared with joy ♡</div>
+    </div>
   </div>
-
 </section>
 
-<!-- BRING YOUR OWN CUP -->
+<section class="section" id="coffee">
+  <div class="coffee-grid">
+    <div class="menu-board">
+      <div class="script">Freshly brewed, just for you</div>
+      <h2>THE COFFEE MENU</h2>
 
-<section class="cup-banner">
+      <div class="menu-line"><span>SMALL</span><span class="dots"></span><strong>$1.50</strong></div>
+      <div class="menu-line"><span>MEDIUM</span><span class="dots"></span><strong>$2.75</strong></div>
+      <div class="menu-line"><span>LARGE</span><span class="dots"></span><strong>$4.15</strong></div>
+      <div class="menu-line"><span>XL</span><span class="dots"></span><strong>$5.25</strong></div>
+      <div class="menu-line"><span>JUMBO</span><span class="dots"></span><strong>$6.50</strong></div>
 
-  <h2>YOUR CUP IS WELCOME HERE!</h2>
+      <div class="menu-note">
+        A LITTLE SOMETHING EXTRA<br>
+        Bring Your Own Cup — WELCOME!<br>
+        FREE REFILLS ON ALL SIZES
+        <div class="script">Your cup, your way. ♡</div>
+      </div>
+    </div>
 
-  <p>
-    Bring your favorite mug. We'll fill it with something good. ☕
-  </p>
-
+    <div class="paper byo-paper">
+      <h2>YOUR CUP IS WELCOME HERE!</h2>
+      <div class="script">Bring your favorite mug.</div>
+      <div class="script">We'll fill it with something good. ♡</div>
+      <div class="ornament">──── ❧ ✦ ❧ ────</div>
+      <p>
+        A little coffee, a little comfort,
+        and a place to slow down.
+      </p>
+    </div>
+  </div>
 </section>
 
-<!-- BAKERY -->
-
-<section class="bakery-section" id="bakery">
-
-  <div class="section-heading">
+<section class="section" id="bakery">
+  <div class="bakery-heading">
     <h2>FRESH FROM THE BAKEHOUSE</h2>
-    <p>A little sweetness for your soul ♡</p>
+    <div class="script">A little sweetness for your soul. ♡</div>
   </div>
 
   <div class="bakery-grid">
-
-    <article class="bakery-card">
+    <div class="photo-frame">
       <img
-        src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800"
-        alt="Freshly baked pastries"
-      >
-      <h3>FRESHLY BAKED GOODNESS</h3>
-    </article>
+        src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=900&q=85"
+        alt="Fresh cinnamon rolls">
+      <div class="photo-caption">Freshly baked goodness</div>
+    </div>
 
-    <article class="bakery-card">
+    <div class="photo-frame">
       <img
-        src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800"
-        alt="Homemade cookies"
-      >
-      <h3>SOMETHING SWEET</h3>
-    </article>
+        src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=85"
+        alt="Homemade chocolate chip cookies">
+      <div class="photo-caption">A little homemade happiness</div>
+    </div>
 
-    <article class="bakery-card">
+    <div class="photo-frame">
       <img
-        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"
-        alt="Rustic homemade bread"
-      >
-      <h3>MADE WITH LOVE</h3>
-    </article>
-
+        src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=900&q=85"
+        alt="Freshly baked muffins">
+      <div class="photo-caption">Made with love</div>
+    </div>
   </div>
-
 </section>
 
-<!-- COMPLIMENTARY SAMPLES -->
+<section class="section">
+  <div class="samples-grid">
+    <div class="paper sample-paper">
+      <div class="script">Something wonderful is always baking...</div>
+      <h2>A TASTE OF THE BAKEHOUSE</h2>
 
-<section class="sample-section">
+      <p>
+        Not sure what to try? We'd love for you to
+        experience a little taste of our bakery!
+      </p>
 
-  <div class="script">
-    Something wonderful is always baking...
+      <p>
+        Enjoy our complimentary sample tray featuring
+        a selection of our bakery items.
+      </p>
+
+      <p>Come for the coffee, stay for the treats!</p>
+
+      <div class="about-signature">FREE SAMPLES. FREE SMELLS. ♡</div>
+    </div>
+
+    <div class="photo-frame sample-photo">
+      <img
+        src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=85"
+        alt="A selection of freshly baked treats">
+      <div class="photo-caption">A little taste of home ♡</div>
+    </div>
   </div>
-
-  <h2>A TASTE OF THE BAKEHOUSE</h2>
-
-  <img
-    src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=1200"
-    alt="Homemade bakery treats"
-  >
-
-  <p>
-    Not sure what to try? We'd love for you to
-    experience a little taste of our bakery!
-
-    <br><br>
-
-    Enjoy our complimentary sample tray featuring
-    a selection of our bakery items.
-
-    Come for the coffee, stay for the treats!
-  </p>
-
-  <div class="script">
-    FREE SAMPLES. FREE SMELLS. ♡
-  </div>
-
 </section>
 
-<!-- VALUES -->
-
-<section class="values wood">
-
+<section class="values">
   <div class="value">
-    <div class="value-icon">☕</div>
-    <h3>SIMPLE COFFEE<br>HAPPY HEARTS</h3>
+    <div class="symbol">☕</div>
+    <p>SIMPLE COFFEE<br>HAPPY HEARTS</p>
   </div>
 
   <div class="value">
-    <div class="value-icon">🥐</div>
-    <h3>FRESH FROM<br>THE OVEN</h3>
+    <div class="symbol">❧</div>
+    <p>FRESH FROM<br>THE OVEN</p>
   </div>
 
   <div class="value">
-    <div class="value-icon">🌿</div>
-    <h3>FREE SMELLS<br>AND A VIEW</h3>
+    <div class="symbol">♣</div>
+    <p>FREE SMELLS<br>AND A VIEW</p>
   </div>
 
   <div class="value">
-    <div class="value-icon">♡</div>
-    <h3>MADE WITH<br>LOVE</h3>
+    <div class="symbol">♡</div>
+    <p>MADE WITH<br>LOVE</p>
   </div>
-
 </section>
 
-<!-- CONTACT -->
-
-<section class="contact-section" id="contact">
-
-  <h2>COME VISIT OUR LITTLE COTTAGE</h2>
-
-  <p>
-    We'd love to welcome you!
-
-    <br>
-
-    Stop by, grab a coffee, and enjoy something fresh.
-  </p>
-
-  <div class="script">
-    Come as you are. Stay awhile. ♡
-  </div>
-
-  <a href="mailto:YOUR-EMAIL-HERE" class="button">
-    GET IN TOUCH
-  </a>
-
+<section class="contact" id="contact">
+  <div class="script">Come visit our little cottage</div>
+  <h2>YOU'RE ALWAYS WELCOME HERE</h2>
+  <p>We'd love to welcome you!</p>
+  <p>Stop by, grab a coffee, and enjoy something fresh.</p>
+  <p><a href="mailto:YOUR-EMAIL-HERE">Send us a message</a></p>
+  <div class="script">Come as you are. Stay awhile. ♡</div>
 </section>
+</main>
 
-<!-- FOOTER: NO REPEATED BUSINESS NAME -->
-
-<footer class="wood">
-
-  <div class="footer-script">
-    Come as you are. Stay awhile. ♡
-  </div>
-
-  <p>
-    HOMEMADE GOODNESS ✦ COFFEE ✦ COMMUNITY
-  </p>
-
-  <p>
-    © 2026
-  </p>
-
+<footer>
+  <p>A little cottage magic. ♡</p>
+  <small>© 2026 · Homemade with heart</small>
 </footer>
 
+</div>
 </body>
 </html>
