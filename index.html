@@ -4,795 +4,1078 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#17251b">
-<title>The Old Cottage Cafe | Coffee, Bakery & Good Company</title>
-<meta name="description" content="Welcome to The Old Cottage Cafe. Fresh bakery treats, sourdough, cinnamon rolls, muffins and simple coffee. Come as you are. Stay awhile.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Special+Elite&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Sabrina Nycole's Bakehouse</title>
+
+<meta name="description" content="Sabrina Nycole's Bakehouse - Freshly baked goodness, simple coffee, rustic charm and a cozy place to stay awhile.">
+
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Rye&display=swap" rel="stylesheet">
 
 <style>
+
+/* =================================
+   COLORS AND GLOBAL SETTINGS
+================================= */
+
 :root {
-  --night:#111710;
-  --forest:#1d3022;
-  --moss:#40543a;
-  --leaf:#71805a;
-  --parchment:#e4d4b4;
-  --paper:#d8c6a2;
-  --ink:#292319;
-  --amber:#c58a43;
-  --cream:#f0e4ca;
+  --black: #151610;
+  --darkwood: #241a13;
+  --wood: #38291d;
+  --green: #263a29;
+  --deepgreen: #19291e;
+  --moss: #66734e;
+  --cream: #e4d3b2;
+  --parchment: #d7c6a5;
+  --gold: #a77b48;
 }
 
-* { box-sizing:border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin:0;
-  color:var(--cream);
-  background:var(--night);
-  font-family:"Cormorant Garamond",Georgia,serif;
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  overflow-x: hidden;
 }
 
-a { color:inherit; text-decoration:none; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-img { display:block; max-width:100%; }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =================================
+   DISTRESSED WOOD TEXTURE
+================================= */
 
 .wood {
-  background-color:#21180f;
+  background-color: var(--darkwood);
+
   background-image:
     repeating-linear-gradient(
       2deg,
-      transparent 0 9px,
-      rgba(0,0,0,.24) 10px 12px,
-      rgba(167,119,68,.10) 13px 15px
+      transparent 0px,
+      rgba(0,0,0,.35) 2px,
+      transparent 5px,
+      rgba(140,100,65,.13) 8px,
+      transparent 12px
     ),
     repeating-linear-gradient(
       90deg,
-      #21170f 0 80px,
-      #2c2015 81px 83px,
-      #1a140f 84px 165px
+      #211811,
+      #35261b 40px,
+      #211811 85px,
+      #302117 120px
     );
-  border-bottom:3px solid #493622;
+
+  border-bottom: 3px solid #59422c;
 }
 
-.topbar {
-  min-height:90px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  padding:18px 5%;
-  flex-wrap:wrap;
+/* =================================
+   NAVIGATION
+================================= */
+
+nav {
+  min-height: 120px;
+  padding: 15px 5%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  position: relative;
+  z-index: 5;
 }
 
-.wordmark {
-  font-family:"Special Elite",serif;
-  letter-spacing:2px;
-  font-size:21px;
-  color:var(--parchment);
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.navlinks {
-  display:flex;
-  gap:24px;
-  flex-wrap:wrap;
+.nav-logo img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-.navlinks a {
-  font-family:"Special Elite",serif;
-  font-size:12px;
-  letter-spacing:1px;
-  color:#e0d0b0;
+.nav-logo span {
+  font-family: 'Rye', serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  max-width: 160px;
 }
 
-.navlinks a:hover { color:var(--amber); }
-
-.nav-note {
-  font-family:"Caveat",cursive;
-  font-size:23px;
-  color:#d7c5a1;
+.nav-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
 }
+
+.nav-links a {
+  font-family: 'Special Elite', cursive;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: #b5c394;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
 
 .hero {
-  min-height:650px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:45px 20px;
+  min-height: 580px;
+
   background:
-    radial-gradient(ellipse at center,rgba(87,111,68,.3),transparent 60%),
-    repeating-linear-gradient(2deg,#15130f 0 10px,#2b2016 11px 14px,#1b1711 15px 21px);
+    linear-gradient(
+      90deg,
+      rgba(10,13,9,.88),
+      rgba(10,13,9,.48),
+      rgba(10,13,9,.10)
+    ),
+    url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=2000')
+    center 50% / cover;
+
+  display: flex;
+  align-items: center;
+
+  padding: 60px 9%;
+
+  position: relative;
+  border-bottom: 10px solid var(--wood);
 }
 
-.logo-frame {
-  width:min(500px,82vw);
-  margin:0 auto 20px;
-  filter:drop-shadow(0 12px 25px #000);
+.hero-content {
+  max-width: 700px;
 }
 
-.logo-frame img {
-  width:100%;
-  height:auto;
+.hero-script {
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  color: var(--cream);
 }
 
 .hero h1 {
-  font-family:"Special Elite",serif;
-  text-transform:uppercase;
-  font-size:clamp(34px,5vw,58px);
-  color:#e7d6b7;
-  margin:10px 0;
-}
-
-.hero h1 span {
-  font-family:"Caveat",cursive;
-  text-transform:none;
-}
-
-.eyebrow {
-  font-family:"Special Elite",serif;
-  letter-spacing:3px;
-  color:#e5d2ad;
+  font-family: 'Rye', serif;
+  font-size: clamp(40px, 7vw, 82px);
+  line-height: 1.12;
+  color: #e2d0ad;
+  text-shadow: 3px 4px 5px #080806;
+  margin: 18px 0;
 }
 
 .hero p {
-  font-size:22px;
-  max-width:700px;
-  line-height:1.5;
-  margin:15px auto;
+  font-family: 'Special Elite', cursive;
+  font-size: 14px;
+  letter-spacing: 3px;
+  line-height: 2;
 }
 
-.hero-caption {
-  font-family:"Caveat",cursive;
-  font-size:27px;
-  color:#e6d6b7;
+.button {
+  display: inline-block;
+  padding: 15px 28px;
+  border: 1px solid var(--cream);
+  margin-top: 25px;
+
+  font-family: 'Special Elite', cursive;
+  font-size: 13px;
+  letter-spacing: 2px;
+
+  transition: .3s;
 }
 
-.cta {
-  display:inline-block;
-  margin-top:15px;
-  padding:13px 25px;
-  border:1px solid var(--parchment);
-  font-family:"Special Elite",serif;
-  font-size:13px;
-  letter-spacing:2px;
-  background:rgba(17,23,16,.5);
+.button:hover {
+  background: var(--cream);
+  color: var(--black);
 }
 
-.cta:hover {
-  background:var(--parchment);
-  color:var(--ink);
+/* Decorative greenery */
+
+.hero-decoration {
+  position: absolute;
+  right: 5%;
+  bottom: 20px;
+  font-size: 36px;
+  opacity: .8;
 }
+
+/* =================================
+   SECTION HEADINGS
+================================= */
 
 .section-heading {
-  text-align:center;
-  padding:55px 20px 20px;
-}
-
-.section-heading .script {
-  font-family:"Caveat",cursive;
-  font-size:29px;
-  color:#ddc99f;
+  text-align: center;
+  padding: 55px 20px 25px;
 }
 
 .section-heading h2 {
-  font-family:"Special Elite",serif;
-  font-size:clamp(30px,5vw,45px);
-  margin:8px 0;
-  color:var(--cream);
+  font-family: 'Rye', serif;
+  font-size: clamp(27px, 4vw, 42px);
+  color: var(--cream);
 }
 
 .section-heading p {
-  font-size:20px;
-  max-width:650px;
-  margin:10px auto;
-  line-height:1.5;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  color: #b9a783;
+  margin-top: 10px;
 }
 
-.story {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-  padding:65px 8%;
-  background:#1b2118;
+/* =================================
+   OUR STORY SCRAPBOOK SECTION
+================================= */
+
+.story-section {
+  background:
+    repeating-linear-gradient(
+      3deg,
+      #211811,
+      #302219 5px,
+      #1d1711 10px
+    );
+
+  padding: 45px 4%;
 }
 
-.story img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  border:10px solid var(--paper);
-  box-shadow:5px 8px 18px #0009;
+.story-grid {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
 }
 
-.paper {
-  background:var(--parchment);
-  color:var(--ink);
-  padding:35px;
-  box-shadow:5px 8px 18px #0009;
-  transform:rotate(-1deg);
+.parchment {
+  background:
+    repeating-linear-gradient(
+      2deg,
+      #d7c6a5,
+      #d7c6a5 3px,
+      #cbbb9d 5px
+    );
+
+  color: #241d16;
+  padding: 35px;
+
+  box-shadow: 5px 7px 15px #090806;
+  transform: rotate(-1deg);
 }
 
-.paper h2 {
-  font-family:"Special Elite",serif;
-  font-size:32px;
+.parchment h2 {
+  font-family: 'Special Elite', cursive;
+  font-size: 32px;
+  margin-bottom: 18px;
 }
 
-.paper p {
-  font-size:21px;
-  line-height:1.5;
+.parchment p {
+  font-size: 21px;
+  line-height: 1.7;
 }
 
-.handwritten {
-  font-family:"Caveat",cursive;
-  font-size:29px;
-  color:var(--moss);
+.parchment .handwriting {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  color: #48543b;
+  margin-top: 20px;
 }
+
+.story-photo {
+  padding: 15px 15px 5px;
+  background: var(--cream);
+  color: #241d16;
+  transform: rotate(2deg);
+  box-shadow: 5px 8px 18px #090806;
+}
+
+.story-photo img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  filter: sepia(20%);
+}
+
+.story-photo p {
+  font-family: 'Caveat', cursive;
+  font-size: 29px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* =================================
+   COFFEE MENU
+================================= */
 
 .coffee-section {
-  padding:65px 20px;
+  padding: 65px 5%;
+
   background:
-    linear-gradient(rgba(20,43,27,.94),rgba(20,43,27,.96)),
-    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1400&q=80") center/cover;
+    linear-gradient(rgba(15,24,17,.93),rgba(15,24,17,.93)),
+    url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1500')
+    center/cover;
 }
 
-.menu-board {
-  max-width:720px;
-  margin:0 auto;
-  padding:35px;
-  border:9px solid #493725;
-  outline:1px solid #9b8056;
-  outline-offset:-16px;
-  text-align:center;
-  background:#1d3022;
-  box-shadow:5px 8px 18px #0009;
+.coffee-board {
+  max-width: 850px;
+  margin: auto;
+
+  padding: 45px;
+  border: 8px solid #493a28;
+
+  background:
+    repeating-linear-gradient(
+      3deg,
+      #263a29,
+      #304632 5px,
+      #1c2d20 10px
+    );
+
+  box-shadow: 6px 8px 20px #090806;
+  text-align: center;
 }
 
-.menu-board h2 {
-  font-family:"Special Elite",serif;
-  font-size:38px;
-  margin:10px 0 25px;
+.coffee-board .script {
+  font-family: 'Caveat', cursive;
+  font-size: 31px;
 }
 
-.menu-board .script {
-  font-family:"Caveat",cursive;
-  font-size:29px;
-  color:#d7c49e;
+.coffee-board h2 {
+  font-family: 'Rye', serif;
+  font-size: 40px;
+  margin: 15px 0 30px;
 }
 
-.menu-row {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:13px 5px;
-  border-bottom:1px dashed #9b9478;
-  font-family:"Special Elite",serif;
-  font-size:18px;
+.coffee-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 17px 5px;
+  border-bottom: 1px dashed #9b9b79;
+
+  font-family: 'Special Elite', cursive;
+  font-size: 19px;
 }
 
-.menu-row strong { color:#e5c18a; }
-
-.menu-note {
-  font-family:"Caveat",cursive;
-  font-size:26px;
-  line-height:1.5;
-  margin-top:25px;
-  color:#e0d0ad;
+.coffee-row strong {
+  color: #e5d3ae;
+  white-space: nowrap;
 }
+
+.coffee-extras {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 2px solid #9b9b79;
+}
+
+.coffee-extras h3 {
+  font-family: 'Rye', serif;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.coffee-extras p {
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.coffee-extras .script {
+  margin-top: 20px;
+  color: #d5c29c;
+}
+
+/* =================================
+   BRING YOUR OWN CUP
+================================= */
+
+.cup-banner {
+  background: #d5c4a3;
+  color: #241c14;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.cup-banner h2 {
+  font-family: 'Rye', serif;
+  font-size: clamp(23px,4vw,35px);
+}
+
+.cup-banner p {
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+/* =================================
+   BAKERY SECTION
+================================= */
 
 .bakery-section {
-  padding:30px 6% 75px;
-  background:
-    linear-gradient(rgba(19,25,17,.94),rgba(19,25,17,.97)),
-    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=80") center/cover;
+  padding: 65px 5%;
+  background: var(--black);
 }
 
 .bakery-grid {
-  max-width:1150px;
-  margin:35px auto 0;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:25px;
+  max-width: 1250px;
+  margin: 35px auto;
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
 }
 
 .bakery-card {
-  background:var(--parchment);
-  color:var(--ink);
-  padding:18px;
-  box-shadow:5px 8px 18px #0009;
-  transition:transform .2s;
+  background: var(--cream);
+  padding: 12px 12px 8px;
+  color: #241c14;
+
+  box-shadow: 5px 8px 15px #080806;
+  transition: .3s;
 }
 
-.bakery-card:hover { transform:translateY(-5px); }
+.bakery-card:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.bakery-card:nth-child(1) {
+  transform: rotate(-2deg);
+}
+
+.bakery-card:nth-child(3) {
+  transform: rotate(1deg);
+}
 
 .bakery-card img {
-  width:100%;
-  height:235px;
-  object-fit:cover;
-  border:5px solid #f0e4ca;
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  filter: sepia(20%);
 }
 
 .bakery-card h3 {
-  font-family:"Special Elite",serif;
-  font-size:26px;
-  margin:18px 0 8px;
-  color:#263b29;
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  font-size: 20px;
+  padding: 17px 5px;
 }
 
-.bakery-card p {
-  font-size:19px;
-  line-height:1.4;
-  margin:8px 0;
+/* =================================
+   COMPLIMENTARY SAMPLE TRAY
+================================= */
+
+.sample-section {
+  padding: 65px 8%;
+
+  background:
+    linear-gradient(rgba(22,28,20,.88),rgba(22,28,20,.88)),
+    url('https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?w=1500')
+    center/cover;
+
+  text-align: center;
 }
 
-.bakery-card ul {
-  font-size:19px;
-  line-height:1.6;
-  padding-left:22px;
+.sample-section h2 {
+  font-family: 'Rye', serif;
+  font-size: clamp(26px,4vw,40px);
 }
 
-.card-note {
-  font-family:"Caveat",cursive;
-  font-size:25px;
-  color:#526044;
+.sample-section .script {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  margin: 15px 0;
 }
 
-.seasonal {
-  max-width:850px;
-  margin:45px auto 0;
-  padding:30px;
-  text-align:center;
-  border:1px solid #a18b61;
-  background:#1d3022;
-  box-shadow:0 8px 20px #0007;
+.sample-section p {
+  max-width: 750px;
+  margin: 20px auto;
+  font-size: 22px;
+  line-height: 1.7;
 }
 
-.seasonal h3 {
-  font-family:"Special Elite",serif;
-  font-size:27px;
-  margin:0 0 10px;
+.sample-section img {
+  max-width: 700px;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  margin: 30px auto;
+  border: 12px solid var(--cream);
+  box-shadow: 5px 8px 18px #080806;
 }
 
-.seasonal p {
-  font-size:21px;
-  line-height:1.5;
-}
-
-.breakfast {
-  padding:70px 20px;
-  background:#d8c6a2;
-  color:#292319;
-}
-
-.breakfast-inner {
-  max-width:950px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-}
-
-.breakfast img {
-  width:100%;
-  height:330px;
-  object-fit:cover;
-  border:9px solid #f0e4ca;
-  box-shadow:4px 8px 15px #0006;
-}
-
-.breakfast h2 {
-  font-family:"Special Elite",serif;
-  font-size:35px;
-}
-
-.breakfast p {
-  font-size:21px;
-  line-height:1.5;
-}
-
-.breakfast .handwritten { font-size:28px; }
-
-.samples {
-  padding:70px 20px;
-  text-align:center;
-  background:#171d15;
-}
-
-.samples h2 {
-  font-family:"Special Elite",serif;
-  font-size:clamp(29px,4vw,42px);
-}
-
-.samples .script {
-  font-family:"Caveat",cursive;
-  font-size:29px;
-  color:#ddcba7;
-}
-
-.samples img {
-  width:min(720px,100%);
-  height:330px;
-  object-fit:cover;
-  margin:28px auto;
-  border:10px solid var(--paper);
-  box-shadow:0 9px 25px #0009;
-}
-
-.samples p {
-  max-width:700px;
-  margin:auto;
-  font-size:21px;
-  line-height:1.5;
-}
-
-.free {
-  font-family:"Caveat",cursive;
-  font-size:31px;
-  color:#dfc69b;
-  margin-top:20px;
-}
+/* =================================
+   BRAND VALUES STRIP
+================================= */
 
 .values {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-  padding:38px 5%;
-  text-align:center;
+  padding: 45px 5%;
+
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+
+  text-align: center;
 }
 
-.value .symbol {
-  font-size:35px;
-  margin-bottom:10px;
+.value-icon {
+  font-size: 37px;
+  margin-bottom: 13px;
 }
 
-.value h3 {
-  font-family:"Special Elite",serif;
-  font-size:14px;
-  letter-spacing:1px;
-  line-height:1.5;
-  font-weight:normal;
+.values h3 {
+  font-family: 'Special Elite', cursive;
+  font-size: 15px;
+  line-height: 1.7;
 }
+
+/* =================================
+   CONTACT SECTION
+================================= */
+
+.contact-section {
+  padding: 65px 20px;
+  background: var(--green);
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-family: 'Rye', serif;
+  font-size: 35px;
+}
+
+.contact-section p {
+  font-size: 21px;
+  margin-top: 15px;
+  line-height: 1.7;
+}
+
+.contact-section .script {
+  font-family: 'Caveat', cursive;
+  font-size: 31px;
+  margin-top: 25px;
+}
+
+/* =================================
+   FOOTER
+================================= */
 
 footer {
-  text-align:center;
-  padding:45px 20px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+  border-radius: 50%;
 }
 
 footer h2 {
-  font-family:"Special Elite",serif;
-  font-size:28px;
-  letter-spacing:2px;
+  font-family: 'Rye', serif;
+  font-size: 25px;
 }
 
-footer p { font-size:18px; }
+footer p {
+  font-family: 'Special Elite', cursive;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
 
 footer .script {
-  font-family:"Caveat",cursive;
-  font-size:29px;
-  color:#ddcba7;
+  font-family: 'Caveat', cursive;
+  font-size: 28px;
+  margin-top: 15px;
 }
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
 
 @media(max-width:800px) {
-  .topbar { justify-content:center; flex-direction:column; }
-  .story,.breakfast-inner { grid-template-columns:1fr; }
-  .bakery-grid { grid-template-columns:1fr; }
-  .values { grid-template-columns:repeat(2,1fr); }
-  .hero { min-height:550px; }
+
+  nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-logo {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 17px;
+  }
+
+  .hero {
+    min-height: 450px;
+    padding: 45px 7%;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bakery-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .coffee-board {
+    padding: 25px 18px;
+  }
+
+  .coffee-board h2 {
+    font-size: 30px;
+  }
+
+  .coffee-row {
+    font-size: 15px;
+  }
+
+  .values {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .parchment {
+    padding: 25px;
+  }
 }
 
-@media(max-width:480px) {
-  .navlinks { justify-content:center; gap:14px; }
-  .navlinks a { font-size:10px; }
-  .menu-board { padding:28px 20px; }
-  .menu-row { font-size:15px; }
-  .story { padding:40px 20px; }
-  .paper { padding:25px; }
+@media(max-width:430px) {
+
+  .hero p {
+    font-size: 11px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .values h3 {
+    font-size: 12px;
+  }
+
+  .sample-section img {
+    height: 250px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<header class="topbar wood">
-  <div class="wordmark">✦ THE OLD COTTAGE CAFE ✦</div>
+<!-- =================================
+     HEADER
+================================= -->
 
-  <nav class="navlinks">
+<nav class="wood">
+
+  <a href="#home" class="nav-logo">
+    <img src="images/logo.png" alt="Sabrina Nycole's Bakehouse Logo">
+    <span>SABRINA NYCOLE'S BAKEHOUSE</span>
+  </a>
+
+  <div class="nav-links">
     <a href="#home">HOME</a>
     <a href="#story">OUR STORY</a>
     <a href="#coffee">COFFEE</a>
     <a href="#bakery">BAKERY</a>
-    <a href="#breakfast">BREAKFAST</a>
-    <a href="#visit">VISIT</a>
-  </nav>
-
-  <div class="nav-note">Come in, stay awhile ♡</div>
-</header>
-
-<main>
-
-<!-- HERO / LOGO -->
-<section class="hero" id="home">
-
-  <div class="logo-frame">
-    <img src="assets/old-cottage-cafe-logo.png"
-         alt="The Old Cottage Cafe vintage woodland logo">
+    <a href="#contact">CONTACT</a>
   </div>
 
-  <div class="hero-caption">A little cottage comfort ♡</div>
+</nav>
 
-  <div class="eyebrow">COFFEE ✦ BAKERY ✦ GOOD COMPANY</div>
 
-  <h1>Come as you are.<br><span>Stay awhile.</span></h1>
+<!-- =================================
+     HERO / WELCOME
+================================= -->
 
-  <p>Simple coffee, fresh-baked goodness, and a cozy place to call your own.</p>
+<header class="hero" id="home">
 
-  <a class="cta" href="#coffee">PULL UP A CHAIR</a>
+  <div class="hero-content">
 
-</section>
+    <div class="hero-script">
+      A little cottage magic...
+    </div>
 
-<!-- OUR STORY -->
-<section class="story" id="story">
-
-  <article class="paper">
-    <h2>Our Little Corner</h2>
+    <h1>
+      SABRINA<br>
+      NYCOLE'S<br>
+      BAKEHOUSE
+    </h1>
 
     <p>
-      Welcome to our little corner of comfort.
-      A place for slow mornings, warm coffee,
-      fresh bakery treats, and good company.
-      Come as you are — there's always room
-      for one more.
+      HOMEMADE GOODNESS ✦ SIMPLE COFFEE ✦ RUSTIC CHARM
     </p>
 
-    <div class="handwritten">
-      Old-fashioned charm. Everyday comfort. ♡
+    <a href="#bakery" class="button">
+      COME ON IN
+    </a>
+
+  </div>
+
+  <div class="hero-decoration">🌿</div>
+
+</header>
+
+
+<!-- =================================
+     OUR STORY
+================================= -->
+
+<section class="story-section" id="story">
+
+  <div class="section-heading">
+    <h2>A LITTLE ABOUT US</h2>
+    <p>Welcome to our little corner of comfort ♡</p>
+  </div>
+
+  <div class="story-grid">
+
+    <div class="parchment">
+
+      <h2>OUR STORY</h2>
+
+      <p>
+        Welcome to Sabrina Nycole's Bakehouse,
+        where homemade goodness meets old-fashioned
+        cottage charm.
+
+        <br><br>
+
+        We believe the simplest things are often
+        the sweetest: the smell of something fresh
+        from the oven, a warm cup of coffee,
+        and sharing a little something delicious.
+
+        <br><br>
+
+        Whether you're stopping by for coffee,
+        picking up a bakery favorite, or enjoying
+        a little sample, we're happy you're here.
+      </p>
+
+      <div class="handwriting">
+        Homemade with heart. ♡
+      </div>
+
     </div>
-  </article>
 
-  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=85"
-       alt="Rustic fresh baked bread">
+    <div class="story-photo">
 
-</section>
+      <img
+        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000"
+        alt="Fresh rustic artisan bread"
+      >
 
-<!-- COFFEE MENU -->
-<section class="coffee-section" id="coffee">
+      <p>Made with love, shared with joy ♡</p>
 
-  <div class="menu-board">
-
-    <div class="script">Simple coffee. Happy hearts.</div>
-
-    <h2>The Coffee Menu</h2>
-
-    <div class="menu-row"><span>SMALL</span><strong>$1.50</strong></div>
-    <div class="menu-row"><span>MEDIUM</span><strong>$2.75</strong></div>
-    <div class="menu-row"><span>LARGE</span><strong>$4.15</strong></div>
-    <div class="menu-row"><span>XL</span><strong>$5.25</strong></div>
-    <div class="menu-row"><span>JUMBO</span><strong>$6.50</strong></div>
-
-    <div class="menu-note">
-      Bring your own cup — you're welcome here!<br>
-      FREE REFILLS ON ALL SIZES ♡
     </div>
 
   </div>
 
 </section>
 
-<!-- BAKERY MENU -->
+
+<!-- =================================
+     COFFEE MENU
+================================= -->
+
+<section class="coffee-section" id="coffee">
+
+  <div class="coffee-board">
+
+    <div class="script">
+      Freshly brewed, just for you
+    </div>
+
+    <h2>THE COFFEE MENU</h2>
+
+    <div class="coffee-row">
+      <span>SMALL</span>
+      <strong>$1.50</strong>
+    </div>
+
+    <div class="coffee-row">
+      <span>MEDIUM</span>
+      <strong>$2.75</strong>
+    </div>
+
+    <div class="coffee-row">
+      <span>LARGE</span>
+      <strong>$4.15</strong>
+    </div>
+
+    <div class="coffee-row">
+      <span>XL</span>
+      <strong>$5.25</strong>
+    </div>
+
+    <div class="coffee-row">
+      <span>JUMBO</span>
+      <strong>$6.50</strong>
+    </div>
+
+    <div class="coffee-extras">
+
+      <h3>✦ A LITTLE SOMETHING EXTRA ✦</h3>
+
+      <p>
+        Bring Your Own Cup — WELCOME!
+        <br>
+        FREE REFILLS ON ALL SIZES
+      </p>
+
+      <div class="script">
+        Your cup, your way. ♡
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =================================
+     BRING YOUR OWN CUP
+================================= -->
+
+<section class="cup-banner">
+
+  <h2>YOUR CUP IS WELCOME HERE!</h2>
+
+  <p>
+    Bring your favorite mug. We'll fill it with something good. ☕
+  </p>
+
+</section>
+
+
+<!-- =================================
+     BAKERY
+================================= -->
+
 <section class="bakery-section" id="bakery">
 
   <div class="section-heading">
-    <div class="script">Fresh from the cottage oven...</div>
-    <h2>The Bakery Basket</h2>
+
+    <h2>FRESH FROM THE BAKEHOUSE</h2>
+
     <p>
-      Homemade favorites, warm from the oven
-      and made to make your day a little sweeter.
+      A little sweetness for your soul ♡
     </p>
+
   </div>
 
   <div class="bakery-grid">
 
-    <!-- CINNAMON ROLLS -->
     <article class="bakery-card">
 
-      <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=900&q=85"
-           alt="Freshly baked cinnamon rolls">
+      <img
+        src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800"
+        alt="Freshly baked croissants"
+      >
 
-      <h3>The Big Ol' Cinnamon Roll</h3>
-
-      <p>
-        A big, soft, fluffy cinnamon roll filled
-        with sweet cinnamon goodness and topped
-        with delicious icing.
-      </p>
-
-      <div class="card-note">Made to be enjoyed slowly ♡</div>
+      <h3>FRESHLY BAKED GOODNESS</h3>
 
     </article>
 
-    <!-- SOURDOUGH -->
     <article class="bakery-card">
 
-      <img src="https://images.unsplash.com/photo-1585478259715-876acc5be8eb?auto=format&fit=crop&w=900&q=85"
-           alt="Rustic artisan sourdough bread">
+      <img
+        src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=800"
+        alt="Homemade cookies"
+      >
 
-      <h3>Sourdough with a Twist</h3>
-
-      <p>Our sourdough selection includes:</p>
-
-      <ul>
-        <li>Traditional Sourdough</li>
-        <li>Cinnamon Raisin</li>
-        <li>Jalapeño Cheddar</li>
-      </ul>
-
-      <div class="card-note">
-        Seasonal flavors & rotating favorites!
-      </div>
+      <h3>SOMETHING SWEET</h3>
 
     </article>
 
-    <!-- MUFFINS -->
     <article class="bakery-card">
 
-      <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=900&q=85"
-           alt="Homemade bakery muffins">
+      <img
+        src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"
+        alt="Rustic homemade bread"
+      >
 
-      <h3>The Muffin Basket</h3>
-
-      <p>Something sweet for your morning:</p>
-
-      <ul>
-        <li>Banana Nut</li>
-        <li>Cinnamon Sugar Crumble</li>
-        <li>Blueberry Cranberry</li>
-      </ul>
-
-      <div class="card-note">
-        Plus seasonal muffin surprises!
-      </div>
+      <h3>MADE WITH LOVE</h3>
 
     </article>
-
-    <!-- SEASONAL TREATS -->
-    <article class="bakery-card">
-
-      <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=85"
-           alt="Assorted homemade bakery treats">
-
-      <h3>Seasonal Sweet Things</h3>
-
-      <p>
-        Keep an eye out for rotating bakery
-        favorites, limited-time treats, and
-        whatever deliciousness is coming
-        out of our oven.
-      </p>
-
-      <div class="card-note">
-        There's always something new to try!
-      </div>
-
-    </article>
-
-  </div>
-
-  <div class="seasonal">
-    <h3>✦ What's Baking Today? ✦</h3>
-
-    <p>
-      Our bakery favorites may change with the seasons.
-      Stop by and see what's fresh from the oven!
-    </p>
-
-    <div class="handwritten">
-      You never know what you'll find ♡
-    </div>
-  </div>
-
-</section>
-
-<!-- BREAKFAST -->
-<section class="breakfast" id="breakfast">
-
-  <div class="breakfast-inner">
-
-    <div>
-      <div class="handwritten">A good morning starts here...</div>
-
-      <h2>The Cottage Egg Sandwich</h2>
-
-      <p>
-        A warm, satisfying egg sandwich made
-        for slow mornings and hungry bellies.
-        Simple, comforting, and just right
-        with a cup of cottage coffee.
-      </p>
-
-      <div class="handwritten">
-        Breakfast tastes better at the cottage. ♡
-      </div>
-    </div>
-
-    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1000&q=85"
-         alt="Breakfast egg sandwich">
 
   </div>
 
 </section>
 
-<!-- COMPLIMENTARY SAMPLES -->
-<section class="samples">
 
-  <div class="script">A little taste of the cottage...</div>
+<!-- =================================
+     COMPLIMENTARY SAMPLE TRAY
+================================= -->
 
-  <h2>Complimentary Bakery Samples</h2>
+<section class="sample-section">
 
-  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=85"
-       alt="Fresh bakery bread and treats">
+  <div class="script">
+    Something wonderful is always baking...
+  </div>
+
+  <h2>
+    A TASTE OF THE BAKEHOUSE
+  </h2>
+
+  <img
+    src="https://images.unsplash.com/photo-1608198093002-ad4e005484a5?w=1200"
+    alt="Fresh bakery assortment"
+  >
 
   <p>
-    Not sure what to try? Stop by our sample tray
-    and enjoy a complimentary taste of our bakery
-    favorites. A little something sweet, just because.
+    Not sure what to try? We'd love for you
+    to experience a little taste of our bakery!
+
+    <br><br>
+
+    Enjoy our complimentary sample tray
+    featuring a selection of our bakery items.
+
+    Come for the coffee, stay for the treats!
   </p>
 
-  <div class="free">
-    FREE SAMPLES. FREE SMELLS. BEAUTIFUL VIEW. ♡
+  <div class="script">
+    FREE SAMPLES. FREE SMELLS. ♡
   </div>
 
 </section>
 
-<!-- COTTAGE VALUES -->
+
+<!-- =================================
+     BRAND VALUES
+================================= -->
+
 <section class="values wood">
 
   <div class="value">
-    <div class="symbol">☕</div>
-    <h3>GOOD COFFEE<br>GOOD COMPANY</h3>
+
+    <div class="value-icon">☕</div>
+
+    <h3>
+      SIMPLE COFFEE<br>
+      HAPPY HEARTS
+    </h3>
+
   </div>
 
   <div class="value">
-    <div class="symbol">🥐</div>
-    <h3>FRESH FROM<br>THE OVEN</h3>
+
+    <div class="value-icon">🥐</div>
+
+    <h3>
+      FRESH FROM<br>
+      THE OVEN
+    </h3>
+
   </div>
 
   <div class="value">
-    <div class="symbol">🌿</div>
-    <h3>FREE SMELLS<br>AND VIEW</h3>
+
+    <div class="value-icon">🌿</div>
+
+    <h3>
+      FREE SMELLS<br>
+      AND A VIEW
+    </h3>
+
   </div>
 
   <div class="value">
-    <div class="symbol">♡</div>
-    <h3>A PLACE TO<br>FEEL AT HOME</h3>
+
+    <div class="value-icon">♡</div>
+
+    <h3>
+      MADE WITH<br>
+      LOVE
+    </h3>
+
   </div>
 
 </section>
 
-</main>
 
-<footer class="wood" id="visit">
+<!-- =================================
+     CONTACT
+================================= -->
 
-  <h2>THE OLD COTTAGE CAFE</h2>
+<section class="contact-section" id="contact">
 
-  <p>COFFEE ✦ BAKERY ✦ GOOD COMPANY</p>
+  <h2>COME VISIT OUR LITTLE COTTAGE</h2>
+
+  <p>
+    We'd love to welcome you!
+    <br>
+    Stop by, grab a coffee, and enjoy something fresh.
+  </p>
 
   <div class="script">
     Come as you are. Stay awhile. ♡
   </div>
 
-  <p>Visit us soon — we'd love to see you.</p>
+  <a href="mailto:YOUR-EMAIL-HERE" class="button">
+    GET IN TOUCH
+  </a>
 
-  <p>© 2026 The Old Cottage Cafe</p>
+</section>
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer class="wood">
+
+  <img
+    src="images/logo.png"
+    class="footer-logo"
+    alt="Sabrina Nycole's Bakehouse"
+  >
+
+  <h2>SABRINA NYCOLE'S BAKEHOUSE</h2>
+
+  <p>
+    HOMEMADE GOODNESS ✦ COFFEE ✦ COMMUNITY
+  </p>
+
+  <div class="script">
+    Homemade with heart. Rooted in rustic charm. ♡
+  </div>
+
+  <p>
+    © 2026 SABRINA NYCOLE'S BAKEHOUSE
+  </p>
 
 </footer>
 
 </body>
 </html>
-
-
