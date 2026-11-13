@@ -4,20 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Sabrina Nycole's Bakehouse</title>
 <meta name="description" content="A little cottage magic. Homemade goodness, simple coffee, and rustic charm.">
+<meta name="theme-color" content="#160905">
 
 <style>
-:root {
-  --wood: #21110c;
-  --wood-light: #392018;
-  --green: #263b2a;
-  --cream: #f0e4c9;
-  --gold: #c5a16b;
-  --ink: #302116;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -25,401 +16,197 @@
 }
 
 html {
+  background: #160905;
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 15px;
 }
 
 body {
-  background: var(--wood);
-  color: var(--cream);
+  background: #160905;
   font-family: Georgia, serif;
-  line-height: 1.7;
 }
 
-/* NAVIGATION */
+/* ORIGINAL ARTWORK */
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(22, 9, 5, .97);
-  border-bottom: 2px solid var(--gold);
-  box-shadow: 0 4px 15px rgba(0,0,0,.5);
-}
-
-.navigation {
+.website {
+  position: relative;
+  width: 100%;
   max-width: 1200px;
-  margin: auto;
-  padding: 13px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px 30px;
+  margin: 0 auto;
+  line-height: 0;
+  box-shadow: 0 0 45px rgba(0,0,0,.85);
 }
 
-.navigation a {
-  color: var(--cream);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 13px;
-  transition: color .2s;
-}
-
-.navigation a:hover {
-  color: var(--gold);
-}
-
-/* HERO ARTWORK */
-
-.hero {
-  max-width: 1200px;
-  margin: auto;
-  box-shadow: 0 10px 35px rgba(0,0,0,.65);
-}
-
-.hero img {
+.website-art {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* GENERAL SECTIONS */
+/* CLICKABLE AREAS */
 
-.section {
-  max-width: 1050px;
-  margin: 65px auto;
-  padding: 45px 35px;
-  border: 1px solid rgba(197,161,107,.55);
-  background:
-    linear-gradient(rgba(32,17,12,.94),rgba(32,17,12,.94)),
-    repeating-linear-gradient(
-      90deg,
-      #4a2b1b,
-      #4a2b1b 3px,
-      #21110c 4px,
-      #21110c 8px
-    );
-  box-shadow: 0 8px 25px rgba(0,0,0,.45);
-  scroll-margin-top: 90px;
+.hotspot {
+  position: absolute;
+  display: block;
+  z-index: 5;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 5px;
+  line-height: normal;
 }
 
-.section h2 {
-  text-align: center;
-  color: var(--gold);
-  font-size: clamp(27px, 4vw, 39px);
-  font-weight: normal;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
-  text-transform: uppercase;
+.hotspot:focus-visible {
+  outline: 3px solid #e6c18f;
+  outline-offset: 3px;
+  background: rgba(240,210,165,.12);
 }
 
-.section p {
-  max-width: 780px;
-  margin: 12px auto;
-  text-align: center;
-  font-size: 17px;
+/* NAVIGATION */
+
+.home {
+  left: 8%;
+  top: 2%;
+  width: 30%;
+  height: 12%;
 }
 
-/* INTRODUCTION */
-
-.intro {
-  text-align: center;
-  padding: 65px 20px 10px;
+.nav-home {
+  left: 45%;
+  top: 2%;
+  width: 8%;
+  height: 4%;
 }
 
-.intro h1 {
-  color: var(--gold);
-  font-size: clamp(30px, 5vw, 48px);
-  font-weight: normal;
-  letter-spacing: 4px;
+.nav-story {
+  left: 55%;
+  top: 2%;
+  width: 11%;
+  height: 4%;
 }
 
-.intro p {
-  font-style: italic;
-  font-size: 19px;
-  color: var(--cream);
+.nav-coffee {
+  left: 66%;
+  top: 2%;
+  width: 9%;
+  height: 4%;
 }
 
-/* COFFEE MENU */
-
-.menu-card {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 25px;
-  background: var(--green);
-  border: 1px solid var(--gold);
+.nav-bakery {
+  left: 76%;
+  top: 2%;
+  width: 9%;
+  height: 4%;
 }
 
-.menu-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  padding: 12px 5px;
-  border-bottom: 1px dashed rgba(240,228,201,.4);
-  font-size: 18px;
+.nav-contact {
+  left: 86%;
+  top: 2%;
+  width: 11%;
+  height: 4%;
 }
 
-.menu-row:last-child {
-  border-bottom: none;
+/* MAIN ARTWORK AREAS */
+
+.come-in {
+  left: 30%;
+  top: 26%;
+  width: 25%;
+  height: 4%;
 }
 
-.price {
-  color: #f0d19a;
-  white-space: nowrap;
+.story {
+  left: 8%;
+  top: 31%;
+  width: 46%;
+  height: 19%;
 }
 
-.menu-note {
-  color: #e6d1a9;
-  text-align: center;
-  margin-top: 20px;
-  font-style: italic;
+.coffee {
+  left: 5%;
+  top: 51%;
+  width: 51%;
+  height: 22%;
 }
 
-/* BAKERY */
-
-.bakery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap: 18px;
-  max-width: 850px;
-  margin: 30px auto;
+.byo {
+  left: 59%;
+  top: 53%;
+  width: 37%;
+  height: 18%;
 }
 
-.bakery-item {
-  text-align: center;
-  padding: 25px 15px;
-  background: rgba(197,161,107,.12);
-  border: 1px solid rgba(197,161,107,.5);
+.bakery {
+  left: 5%;
+  top: 76%;
+  width: 65%;
+  height: 14%;
 }
 
-.bakery-item h3 {
-  color: var(--gold);
-  font-size: 21px;
-  font-weight: normal;
-  margin-bottom: 8px;
+.samples {
+  left: 69%;
+  top: 75%;
+  width: 27%;
+  height: 15%;
 }
 
-/* CONTACT */
-
-.contact-details {
-  text-align: center;
-  margin-top: 25px;
+.visit {
+  left: 68%;
+  top: 91%;
+  width: 29%;
+  height: 7%;
 }
 
-.contact-details a {
-  color: #f0d19a;
-  text-decoration: none;
-}
-
-.contact-details a:hover {
-  text-decoration: underline;
-}
-
-.contact-details p {
-  margin: 15px auto;
-}
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-  padding: 35px 15px;
-  background: #100704;
-  border-top: 2px solid var(--gold);
-  color: #c9b99d;
-}
-
-footer p {
-  margin: 5px;
-  font-style: italic;
-}
-
-/* MOBILE */
-
-@media(max-width:600px) {
-  .navigation {
-    gap: 10px 16px;
-    padding: 12px 8px;
-  }
-
-  .navigation a {
-    font-size: 11px;
-    letter-spacing: 1px;
-  }
-
-  .section {
-    margin: 35px 12px;
-    padding: 30px 18px;
-  }
-
-  .menu-row {
-    font-size: 16px;
-  }
-
-  .intro {
-    padding-top: 40px;
+@media (hover: hover) {
+  .hotspot:hover {
+    background: rgba(255,220,170,.035);
   }
 }
 </style>
 </head>
 
-<body id="home">
+<body>
 
-<header>
-  <nav class="navigation" aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#story">Our Story</a>
-    <a href="#coffee">Coffee</a>
-    <a href="#bakery">Bakery</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<main class="website" id="home">
 
-<!-- ORIGINAL BAKEHOUSE ARTWORK -->
-<div class="hero">
   <img
+    class="website-art"
     src="images/bakehouse-homepage.png"
-    alt="Sabrina Nycole's Bakehouse rustic woodland bakery artwork"
+    alt="Sabrina Nycole's Bakehouse original rustic woodland bakery website artwork"
   >
-</div>
 
-<!-- WELCOME -->
-<div class="intro">
-  <h1>FRESH FROM THE COTTAGE</h1>
-  <p>A little cottage magic, baked with love.</p>
-</div>
+  <!-- HOME -->
+  <a class="hotspot home" href="#home" aria-label="Home"></a>
+  <a class="hotspot nav-home" href="#home" aria-label="Home"></a>
 
-<!-- OUR STORY -->
-<section class="section" id="story">
-  <h2>Our Story</h2>
+  <!-- STORY -->
+  <a class="hotspot nav-story" href="#story" aria-label="Our Story"></a>
+  <a class="hotspot come-in" href="#story" aria-label="Come on in"></a>
+  <a class="hotspot story" href="#story" aria-label="Our Story"></a>
 
-  <p>
-    Welcome to Sabrina Nycole's Bakehouse, a cozy little
-    cottage-inspired bakery where homemade goodness,
-    simple pleasures, and a little bit of magic come together.
-  </p>
+  <!-- COFFEE -->
+  <a class="hotspot nav-coffee" href="#coffee" aria-label="Coffee"></a>
+  <a class="hotspot coffee" href="#coffee" aria-label="Coffee menu"></a>
+  <a class="hotspot byo" href="#coffee" aria-label="Bring your own cup"></a>
 
-  <p>
-    Inspired by woodland cottages, warm kitchens,
-    fresh coffee, and the comfort of something baked with love.
-  </p>
+  <!-- BAKERY -->
+  <a class="hotspot nav-bakery" href="#bakery" aria-label="Bakery"></a>
+  <a class="hotspot bakery" href="#bakery" aria-label="Bakery"></a>
+  <a class="hotspot samples" href="#samples" aria-label="Bakery samples"></a>
 
-  <p>
-    Come in, slow down, enjoy the atmosphere,
-    and make yourself at home.
-  </p>
-</section>
+  <!-- CONTACT -->
+  <a class="hotspot nav-contact" href="#contact" aria-label="Contact"></a>
+  <a class="hotspot visit" href="#contact" aria-label="Visit us"></a>
 
-<!-- COFFEE -->
-<section class="section" id="coffee">
-  <h2>From the Coffee Pot</h2>
+</main>
 
-  <p>Simple, comforting coffee. Just the way it should be.</p>
+<!-- INVISIBLE ANCHORS AT THE ACTUAL IMAGE POSITIONS -->
 
-  <div class="menu-card">
-
-    <div class="menu-row">
-      <span>Small</span>
-      <span class="price">$1.50</span>
-    </div>
-
-    <div class="menu-row">
-      <span>Medium</span>
-      <span class="price">$2.75</span>
-    </div>
-
-    <div class="menu-row">
-      <span>Large</span>
-      <span class="price">$4.15</span>
-    </div>
-
-    <div class="menu-row">
-      <span>XL</span>
-      <span class="price">$5.25</span>
-    </div>
-
-    <div class="menu-row">
-      <span>Jumbo</span>
-      <span class="price">$6.50</span>
-    </div>
-
-    <div class="menu-note">
-      FREE REFILLS ON ALL SIZES
-    </div>
-
-    <div class="menu-note">
-      Bring your own favorite cup. You're always welcome!
-    </div>
-
-  </div>
-</section>
-
-<!-- BAKERY -->
-<section class="section" id="bakery">
-  <h2>Fresh from the Bakery</h2>
-
-  <p>
-    A little something sweet, a little something homemade,
-    and plenty of reasons to stay awhile.
-  </p>
-
-  <div class="bakery-grid">
-
-    <div class="bakery-item">
-      <h3>Fresh Baked Goodness</h3>
-      <p>Homemade bakery favorites made with love.</p>
-    </div>
-
-    <div class="bakery-item">
-      <h3>Something Sweet</h3>
-      <p>A rotating selection of treats to enjoy.</p>
-    </div>
-
-    <div class="bakery-item">
-      <h3>Sample Tray</h3>
-      <p>Complimentary bakery samples to try!</p>
-    </div>
-
-  </div>
-
-  <p><strong>FREE SMELLS AND VIEW</strong></p>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <h2>Come on In</h2>
-
-  <p>
-    We'd love to welcome you to our little cottage.
-    This is a sample contact section for website testing.
-  </p>
-
-  <div class="contact-details">
-
-    <p>
-      <strong>Phone:</strong>
-      <a href="tel:+15550101234">(555) 010-1234</a>
-    </p>
-
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:hello@example.com">hello@example.com</a>
-    </p>
-
-    <p>
-      <strong>Location:</strong> Lake County, Illinois
-    </p>
-
-  </div>
-</section>
-
-<footer>
-  <p>Sabrina Nycole's Bakehouse</p>
-  <p>A little cottage magic, baked with love.</p>
-  <p>&copy; 2026 Sabrina Nycole's Bakehouse</p>
-</footer>
+<div id="story" style="position:absolute;top:31%;left:0;width:1px;height:1px;"></div>
+<div id="coffee" style="position:absolute;top:51%;left:0;width:1px;height:1px;"></div>
+<div id="bakery" style="position:absolute;top:76%;left:0;width:1px;height:1px;"></div>
+<div id="samples" style="position:absolute;top:75%;left:0;width:1px;height:1px;"></div>
+<div id="contact" style="position:absolute;top:91%;left:0;width:1px;height:1px;"></div>
 
 </body>
 </html>
